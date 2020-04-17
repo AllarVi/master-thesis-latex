@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.17)  17 APR 2020 13:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.17)  17 APR 2020 17:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -464,51 +464,169 @@ File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./sec
 tions/title-est.tex [1])
-(./sections/declaration.tex [1]) (./main.toc)
+(./sections/declaration.tex [1]) (./main.toc [1
+
+])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [1
 
-] (./main.lof)
-\tf@lof=\write5
-\openout5 = `main.lof'.
-
- [2
-
-] (./main.lot)
-\tf@lot=\write6
-\openout6 = `main.lot'.
-
-[3
-
-]
-Chapter 1.
-(./sections/introduction.tex Excluding 'comment' comment.)
-(./sections/human-activity-recognition.tex Excluding 'comment' comment.
-[4
-
-]) (./sections/problem-statement.tex Excluding 'comment' comment.)
-(./sections/related-work.tex)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
 Make it at least 14.49998pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
+[2] (./main.lof)
+\tf@lof=\write5
+\openout5 = `main.lof'.
+
+ [3
+
+] (./main.lot)
+\tf@lot=\write6
+\openout6 = `main.lot'.
+
+ [4
+
+]
+Chapter 1.
+(./sections/introduction.tex Excluding 'comment' comment.)
+(./sections/human-activity-recognition.tex Excluding 'comment' comment.
 [5
+
+]) (./sections/problem-statement.tex Excluding 'comment' comment.)
+(./sections/related-work.tex) [6
 
 ]
 Chapter 2.
 (./sections/implementation.tex Excluding 'comment' comment.
-Excluding 'comment' comment. Excluding 'comment' comment.) [6
+Excluding 'comment' comment. Excluding 'comment' comment.) [7
 
 ]
 Chapter 3.
-(./sections/data-preprocessing.tex Excluding 'comment' comment.) [7
+(./sections/data-acquisition.tex Excluding 'comment' comment. [8
 
 ]
-(./main.bbl [8
+<images/data-acquisition/example-backflip-part-1.png, id=40, 501.875pt x 501.87
+5pt>
+File: images/data-acquisition/example-backflip-part-1.png Graphic file (type pn
+g)
+<use images/data-acquisition/example-backflip-part-1.png>
+Package pdftex.def Info: images/data-acquisition/example-backflip-part-1.png  u
+sed on input line 34.
+(pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
+<images/data-acquisition/example-backflip-part-2.png, id=42, 501.875pt x 501.87
+5pt>
+File: images/data-acquisition/example-backflip-part-2.png Graphic file (type pn
+g)
+<use images/data-acquisition/example-backflip-part-2.png>
+Package pdftex.def Info: images/data-acquisition/example-backflip-part-2.png  u
+sed on input line 35.
+(pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
+<images/data-acquisition/example-backflip-part-3.png, id=43, 501.875pt x 501.87
+5pt>
+File: images/data-acquisition/example-backflip-part-3.png Graphic file (type pn
+g)
+<use images/data-acquisition/example-backflip-part-3.png>
+Package pdftex.def Info: images/data-acquisition/example-backflip-part-3.png  u
+sed on input line 36.
+(pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
+<images/data-acquisition/example-backflip-part-4.png, id=44, 501.875pt x 501.87
+5pt>
+File: images/data-acquisition/example-backflip-part-4.png Graphic file (type pn
+g)
+<use images/data-acquisition/example-backflip-part-4.png>
+Package pdftex.def Info: images/data-acquisition/example-backflip-part-4.png  u
+sed on input line 38.
+(pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
+<images/data-acquisition/example-backflip-part-5.png, id=45, 501.875pt x 501.87
+5pt>
+File: images/data-acquisition/example-backflip-part-5.png Graphic file (type pn
+g)
+<use images/data-acquisition/example-backflip-part-5.png>
+Package pdftex.def Info: images/data-acquisition/example-backflip-part-5.png  u
+sed on input line 39.
+(pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
+
+Overfull \hbox (36.00005pt too wide) in paragraph at lines 33--41
+ [][] 
+ []
+
+<images/data-acquisition/example-flack-part-1.png, id=46, 501.875pt x 501.875pt
+>
+File: images/data-acquisition/example-flack-part-1.png Graphic file (type png)
+<use images/data-acquisition/example-flack-part-1.png>
+Package pdftex.def Info: images/data-acquisition/example-flack-part-1.png  used
+ on input line 48.
+(pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
+<images/data-acquisition/example-flack-part-2.png, id=47, 501.875pt x 501.875pt
+>
+File: images/data-acquisition/example-flack-part-2.png Graphic file (type png)
+<use images/data-acquisition/example-flack-part-2.png>
+Package pdftex.def Info: images/data-acquisition/example-flack-part-2.png  used
+ on input line 49.
+(pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
+<images/data-acquisition/example-flack-part-3.png, id=48, 501.875pt x 501.875pt
+>
+File: images/data-acquisition/example-flack-part-3.png Graphic file (type png)
+<use images/data-acquisition/example-flack-part-3.png>
+Package pdftex.def Info: images/data-acquisition/example-flack-part-3.png  used
+ on input line 50.
+(pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
+<images/data-acquisition/example-flack-part-4.png, id=49, 501.875pt x 501.875pt
+>
+File: images/data-acquisition/example-flack-part-4.png Graphic file (type png)
+<use images/data-acquisition/example-flack-part-4.png>
+Package pdftex.def Info: images/data-acquisition/example-flack-part-4.png  used
+ on input line 52.
+(pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
+<images/data-acquisition/example-flack-part-5.png, id=50, 501.875pt x 501.875pt
+>
+File: images/data-acquisition/example-flack-part-5.png Graphic file (type png)
+<use images/data-acquisition/example-flack-part-5.png>
+Package pdftex.def Info: images/data-acquisition/example-flack-part-5.png  used
+ on input line 53.
+(pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
+
+Overfull \hbox (36.00005pt too wide) in paragraph at lines 47--55
+ [][] 
+ []
+
+<images/data-acquisition/example-backflip-marker-start.png, id=51, 501.875pt x 
+501.875pt>
+File: images/data-acquisition/example-backflip-marker-start.png Graphic file (t
+ype png)
+<use images/data-acquisition/example-backflip-marker-start.png>
+Package pdftex.def Info: images/data-acquisition/example-backflip-marker-start.
+png  used on input line 70.
+(pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
+<images/data-acquisition/example-backflip-marker-end.png, id=52, 501.875pt x 50
+1.875pt>
+File: images/data-acquisition/example-backflip-marker-end.png Graphic file (typ
+e png)
+<use images/data-acquisition/example-backflip-marker-end.png>
+Package pdftex.def Info: images/data-acquisition/example-backflip-marker-end.pn
+g  used on input line 71.
+(pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
+[9
+
+] [10 <./images/data-acquisition/example-backflip-part-1.png> <./images/data-ac
+quisition/example-backflip-part-2.png> <./images/data-acquisition/example-backf
+lip-part-3.png> <./images/data-acquisition/example-backflip-part-4.png> <./imag
+es/data-acquisition/example-backflip-part-5.png> <./images/data-acquisition/exa
+mple-flack-part-1.png> <./images/data-acquisition/example-flack-part-2.png> <./
+images/data-acquisition/example-flack-part-3.png> <./images/data-acquisition/ex
+ample-flack-part-4.png> <./images/data-acquisition/example-flack-part-5.png>] [
+11 <./images/data-acquisition/example-backflip-marker-start.png> <./images/data
+-acquisition/example-backflip-marker-end.png>]) [12
+
+]
+Chapter 4.
+(./sections/data-preprocessing.tex Excluding 'comment' comment.) [13
+
+]
+(./main.bbl [14
 
 ]
 
@@ -516,7 +634,7 @@ Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
 ) 
 AED: lastpage setting LastPage
-[9
+[15
 
 ]
 
@@ -525,21 +643,21 @@ See the caption package documentation for explanation.
 
 (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 9187 strings out of 480608
- 171675 string characters out of 5903630
- 411612 words of memory out of 5000000
- 24943 multiletter control sequences out of 15000+600000
+ 9276 strings out of 480608
+ 175619 string characters out of 5903630
+ 414647 words of memory out of 5000000
+ 25011 multiletter control sequences out of 15000+600000
  539996 words of font info for 51 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 41i,10n,46p,1369b,477s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,11n,49p,1369b,600s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msl12.pfb>
-Output written on main.pdf (12 pages, 54250 bytes).
+Output written on main.pdf (18 pages, 16086151 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
- 37 compressed objects within 1 object stream
+ 99 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
