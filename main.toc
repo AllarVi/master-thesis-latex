@@ -19,13 +19,14 @@
 \contentsline {chapter}{\numberline {3}Data acquisition}{8}%
 \contentsline {section}{\numberline {3.1}Recording Human Actions}{9}%
 \contentsline {subsection}{\numberline {3.1.1}Choosing Activities To Record}{9}%
-\contentsline {subsection}{\numberline {3.1.2}Backflip}{9}%
-\contentsline {subsection}{\numberline {3.1.3}Back Handspring}{11}%
-\contentsline {subsection}{\numberline {3.1.4}Recording Process}{11}%
-\contentsline {section}{\numberline {3.2}Estimating and Collecting Action Poses}{12}%
-\contentsline {chapter}{\numberline {4}Data pre-processing}{13}%
-\contentsline {section}{\numberline {4.1}Data description}{13}%
-\contentsline {section}{\numberline {4.2}Drawing Entity}{13}%
-\contentsline {subsection}{\numberline {4.2.1}Outlier removal}{13}%
-\contentsline {subsection}{\numberline {4.2.2}JSON to Drawing entity Conversion}{13}%
-\contentsline {chapter}{Bibliography}{15}%
+\contentsline {subsection}{\numberline {3.1.2}Identifying Activities}{11}%
+\contentsline {subsection}{\numberline {3.1.3}Backflip}{11}%
+\contentsline {subsection}{\numberline {3.1.4}Back Handspring}{12}%
+\contentsline {subsection}{\numberline {3.1.5}Recording Process}{12}%
+\contentsline {section}{\numberline {3.2}Estimating and Collecting Human Action Poses}{13}%
+\contentsline {chapter}{\numberline {4}Data pre-processing}{14}%
+\contentsline {section}{\numberline {4.1}Data description}{14}%
+\contentsline {section}{\numberline {4.2}Drawing Entity}{14}%
+\contentsline {subsection}{\numberline {4.2.1}Outlier removal}{14}%
+\contentsline {subsection}{\numberline {4.2.2}JSON to Drawing entity Conversion}{14}%
+\contentsline {chapter}{Bibliography}{16}%

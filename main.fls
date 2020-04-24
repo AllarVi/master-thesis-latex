@@ -159,6 +159,7 @@ INPUT sections/implementation.tex
 INPUT sections/implementation.tex
 INPUT sections/data-acquisition.tex
 INPUT sections/data-acquisition.tex
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT images/data-acquisition/example-backflip-part-1.png
 INPUT ./images/data-acquisition/example-backflip-part-1.png
 INPUT ./images/data-acquisition/example-backflip-part-1.png
@@ -202,7 +203,6 @@ INPUT images/data-acquisition/example-backflip-marker-end.png
 INPUT ./images/data-acquisition/example-backflip-marker-end.png
 INPUT ./images/data-acquisition/example-backflip-marker-end.png
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm
-INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT sections/data-preprocessing.tex
 INPUT sections/data-preprocessing.tex
 INPUT main.bbl

@@ -18,15 +18,16 @@ Keywords:
 
 As with most problems potentially solvable by implementing machine learning based solutions, the data to be explored and used to train machine learning models plays central part in our implementation. Although, machine learning promises to loosen the strictness of the data used in a system by trying to generalize and adapt the models themselves to the data, the quality of the initial data used to develop prototypes still directly influences the interpretation and value of the outcome. Interpretation of not only the outcome, but the entire solution is needed to have clear understanding of why certain outcomes exist, which in turn helps to spark discussion and spread knowledge gained during an experiment. The value of this work as a scientific paper, reusable by peers for new scientific experiments, is also directly influenced by the quality of the initial data. The author of this work is aware, that by choosing a very niche dataset he risks to reduce the social reach of this work and thereby stresses to point that he mainly wishes to contribute his finding to the human activity recognition domain and not necessarily to the specific sports domain of gymnastics.
 
-The data acquisition chapter is split into two parts. First, the part explaining what kind and how much of data the author is collecting and the process behind it. The second part explains a more technical approach on how the initial data for the human activity recognition algorithm is acquired from recorded human motions and the tools used to do so.
+The data acquisition chapter is split into two parts. The first part (\ref{recording-human-actions}) explains what kind and how much of data the author is collecting and the process behind it. The second part (\ref{estimating-and-collecting-human-action-poses}) explains a more technical approach on how the initial data for the human activity recognition algorithm is acquired from recorded human motions and the tools used to do so.
 
 \section{Recording Human Actions}
+\label{recording-human-actions}
 
 \subsection{Choosing Activities To Record}
 
-When it comes to choosing difficult biomechanical activities performed by humans, gymnastics comes on the top of the list. Gymnastic feats don't require any additional equipment by humans, but physical strength, flexibility and kinesthetic awareness are a must to perform any of the skills demonstrated by elite athletes. Gymnastics is also special in its indisputable need for utilizing every part of the human body. All major muscle groups of an athlete need to be in superior condition to perform certain rotations, jumps and holds. So, many athletes start their career at a very young age.
+When it comes to choosing difficult biomechanical activities performed by humans, gymnastics comes on the top of the list. Gymnastic feats don't require any additional equipment by humans, but at the same time physical strength, flexibility and kinesthetic awareness are a must to perform any of the skills demonstrated by elite athletes. Gymnastics is also special in its indisputable need for utilizing every part of the human body. All major muscle groups of an athlete need to be in superior condition to perform certain rotations, jumps and holds. As age is a limiting factor when it comes to peak physical condition, many athletes start their career at a very young age. However, there is no age limit for practicing gymnastics at a recreational level.
 
-Automatic recognition of human activity requires reference or training data to train our machine to recognize some gymnastic movements. The two activities chosen to prove the hypothesis of this paper are backflips and back handsprings. Figures \ref{example-of-backflip} and \ref{example-of-back-handspring} will hopefully give the reader a visual idea of backflips and back handsprings respectively.
+Working with gymnastic movements and trying to automate the recognition of this kind of human activity requires a reference or in machine learning terms \textit{training data} to train our machine. The two activities chosen to prove the hypothesis of this paper are known as backflips and back handsprings. While fast and explosive, these activities are similar in their execution and achievable by all levels of gymnastics trainees. As backflips and back handsprings are the building blocks of more complex gymnastic combinations, perfecting the technique of these activities provides athletes with the confidence and skill necessary to move on to more difficult feats. From the need for perfecting the technique of these basic activities comes the motivation to analyze them and automate the feedback loop for the athletes. From the athlete's perspective, it is faster and cheaper to get the feedback from, for example, a portable device with recording capabilities, rather than a gymnastics coach. From the coach's perspective, it is also more convenient to automate the learning process of easier activities so the coach can concentrate on guiding athletes towards more interesting and challenging exercises. Figures \ref{example-of-backflip} and \ref{example-of-back-handspring} will hopefully give the reader a visual idea of how backflips and back handsprings are performed respectively. 
 
 \begin{figure*}
    \centering
@@ -56,11 +57,14 @@ Automatic recognition of human activity requires reference or training data to t
     \label{example-of-back-handspring}
 \end{figure*}
 
-For each activity there needs to be specific start and end markers, so it could be easily recognized when the activity starts and when does it end.
+\subsection{Identifying Activities}
 
-The following is a detailed description of each activity and its parameters.
+As with all identifiable activities, it should be clear when the activity starts and when it ends. This paper proposes specific start and end markers for both activities, so they could be easily recognized and validated by a human observer. The markers should cover the full duration of a movement, all while sustaining the integrity and focusing on the period of interest of each activity.
+
+A more detailed explanation of each activity and references to the visual markers can be found in sections \ref{backflip-description-section} and \ref{back-handspring-description-section}.
 
 \subsection{Backflip}
+\label{backflip-description-section}
 
 A backflip is a sequence of body movements in which a person leaps into the air and rotates backwards over the body's horizontal axis. For the backflip, we mark the start of a backflip as the frame when athlete's both arms pass the horizontal line at shoulder level moving downwards and generating momentum. We mark the end of a backflip as the frame when both heels of the feet touch the ground again. We choose the heels of feet so we can include the amortization part of the landing phase of the backflip in the recording. The red bar in figure \ref{example-backflip-markers} demonstrates visual markers for trimming the sample recording to include only the activity under investigation. These markers were chosen by the author to the best of his knowledge of the domain as the clearest points for a human observer to recognize a backflip. Choosing different markers is a potential discussion topic for future improvements.
 
@@ -75,6 +79,8 @@ A backflip is a sequence of body movements in which a person leaps into the air 
 \end{figure*}
 
 \subsection{Back Handspring}
+\label{back-handspring-description-section}
+
 
 TODO
 
@@ -96,7 +102,8 @@ Since these types of movements are performed for a duration of time, just still 
 
 Each activity is recorded as one still view from eye level angle fully showing the subjects body from head to toe.
 
-\section{Estimating and Collecting Action Poses}
+\section{Estimating and Collecting Human Action Poses}
+\label{estimating-and-collecting-human-action-poses}
 
 
 

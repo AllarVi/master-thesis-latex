@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.17)  24 APR 2020 11:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.17)  24 APR 2020 12:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -514,7 +514,7 @@ File: images/data-acquisition/example-backflip-part-1.png Graphic file (type pn
 g)
 <use images/data-acquisition/example-backflip-part-1.png>
 Package pdftex.def Info: images/data-acquisition/example-backflip-part-1.png  u
-sed on input line 34.
+sed on input line 35.
 (pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
 <images/data-acquisition/example-backflip-part-2.png, id=42, 501.875pt x 501.87
 5pt>
@@ -522,7 +522,7 @@ File: images/data-acquisition/example-backflip-part-2.png Graphic file (type pn
 g)
 <use images/data-acquisition/example-backflip-part-2.png>
 Package pdftex.def Info: images/data-acquisition/example-backflip-part-2.png  u
-sed on input line 35.
+sed on input line 36.
 (pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
 <images/data-acquisition/example-backflip-part-3.png, id=43, 501.875pt x 501.87
 5pt>
@@ -530,7 +530,7 @@ File: images/data-acquisition/example-backflip-part-3.png Graphic file (type pn
 g)
 <use images/data-acquisition/example-backflip-part-3.png>
 Package pdftex.def Info: images/data-acquisition/example-backflip-part-3.png  u
-sed on input line 36.
+sed on input line 37.
 (pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
 <images/data-acquisition/example-backflip-part-4.png, id=44, 501.875pt x 501.87
 5pt>
@@ -538,7 +538,7 @@ File: images/data-acquisition/example-backflip-part-4.png Graphic file (type pn
 g)
 <use images/data-acquisition/example-backflip-part-4.png>
 Package pdftex.def Info: images/data-acquisition/example-backflip-part-4.png  u
-sed on input line 37.
+sed on input line 38.
 (pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
 <images/data-acquisition/example-backflip-part-5.png, id=45, 501.875pt x 501.87
 5pt>
@@ -546,7 +546,7 @@ File: images/data-acquisition/example-backflip-part-5.png Graphic file (type pn
 g)
 <use images/data-acquisition/example-backflip-part-5.png>
 Package pdftex.def Info: images/data-acquisition/example-backflip-part-5.png  u
-sed on input line 38.
+sed on input line 39.
 (pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
 <images/data-acquisition/example-backflip-part-6.png, id=46, 501.875pt x 501.87
 5pt>
@@ -554,10 +554,10 @@ File: images/data-acquisition/example-backflip-part-6.png Graphic file (type pn
 g)
 <use images/data-acquisition/example-backflip-part-6.png>
 Package pdftex.def Info: images/data-acquisition/example-backflip-part-6.png  u
-sed on input line 39.
+sed on input line 40.
 (pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
 
-Overfull \hbox (36.00005pt too wide) in paragraph at lines 33--41
+Overfull \hbox (36.00005pt too wide) in paragraph at lines 34--42
  [][] 
  []
 
@@ -566,64 +566,48 @@ Overfull \hbox (36.00005pt too wide) in paragraph at lines 33--41
 File: images/data-acquisition/example-flack-part-1.png Graphic file (type png)
 <use images/data-acquisition/example-flack-part-1.png>
 Package pdftex.def Info: images/data-acquisition/example-flack-part-1.png  used
- on input line 48.
+ on input line 49.
 (pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
 <images/data-acquisition/example-flack-part-2.png, id=48, 501.875pt x 501.875pt
 >
 File: images/data-acquisition/example-flack-part-2.png Graphic file (type png)
 <use images/data-acquisition/example-flack-part-2.png>
 Package pdftex.def Info: images/data-acquisition/example-flack-part-2.png  used
- on input line 49.
+ on input line 50.
 (pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
 <images/data-acquisition/example-flack-part-3.png, id=49, 501.875pt x 501.875pt
 >
 File: images/data-acquisition/example-flack-part-3.png Graphic file (type png)
 <use images/data-acquisition/example-flack-part-3.png>
 Package pdftex.def Info: images/data-acquisition/example-flack-part-3.png  used
- on input line 50.
+ on input line 51.
 (pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
 <images/data-acquisition/example-flack-part-4.png, id=50, 501.875pt x 501.875pt
 >
 File: images/data-acquisition/example-flack-part-4.png Graphic file (type png)
 <use images/data-acquisition/example-flack-part-4.png>
 Package pdftex.def Info: images/data-acquisition/example-flack-part-4.png  used
- on input line 51.
+ on input line 52.
 (pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
 <images/data-acquisition/example-flack-part-5.png, id=51, 501.875pt x 501.875pt
 >
 File: images/data-acquisition/example-flack-part-5.png Graphic file (type png)
 <use images/data-acquisition/example-flack-part-5.png>
 Package pdftex.def Info: images/data-acquisition/example-flack-part-5.png  used
- on input line 52.
+ on input line 53.
 (pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
 <images/data-acquisition/example-flack-part-6.png, id=52, 501.875pt x 501.875pt
 >
 File: images/data-acquisition/example-flack-part-6.png Graphic file (type png)
 <use images/data-acquisition/example-flack-part-6.png>
 Package pdftex.def Info: images/data-acquisition/example-flack-part-6.png  used
- on input line 53.
+ on input line 54.
 (pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
 
-Overfull \hbox (36.00005pt too wide) in paragraph at lines 47--55
+Overfull \hbox (36.00005pt too wide) in paragraph at lines 48--56
  [][] 
  []
 
-<images/data-acquisition/example-backflip-marker-start.png, id=53, 501.875pt x 
-501.875pt>
-File: images/data-acquisition/example-backflip-marker-start.png Graphic file (t
-ype png)
-<use images/data-acquisition/example-backflip-marker-start.png>
-Package pdftex.def Info: images/data-acquisition/example-backflip-marker-start.
-png  used on input line 70.
-(pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
-<images/data-acquisition/example-backflip-marker-end.png, id=54, 501.875pt x 50
-1.875pt>
-File: images/data-acquisition/example-backflip-marker-end.png Graphic file (typ
-e png)
-<use images/data-acquisition/example-backflip-marker-end.png>
-Package pdftex.def Info: images/data-acquisition/example-backflip-marker-end.pn
-g  used on input line 71.
-(pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
 [9
 
 ] [10 <./images/data-acquisition/example-backflip-part-1.png> <./images/data-ac
@@ -634,16 +618,38 @@ mple-backflip-part-6.png> <./images/data-acquisition/example-flack-part-1.png>
 <./images/data-acquisition/example-flack-part-2.png> <./images/data-acquisition
 /example-flack-part-3.png> <./images/data-acquisition/example-flack-part-4.png>
  <./images/data-acquisition/example-flack-part-5.png> <./images/data-acquisitio
-n/example-flack-part-6.png>] [11 <./images/data-acquisition/example-backflip-ma
-rker-start.png> <./images/data-acquisition/example-backflip-marker-end.png>]) [
-12
+n/example-flack-part-6.png>]
+<images/data-acquisition/example-backflip-marker-start.png, id=73, 501.875pt x 
+501.875pt>
+File: images/data-acquisition/example-backflip-marker-start.png Graphic file (t
+ype png)
+<use images/data-acquisition/example-backflip-marker-start.png>
+Package pdftex.def Info: images/data-acquisition/example-backflip-marker-start.
+png  used on input line 74.
+(pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
+<images/data-acquisition/example-backflip-marker-end.png, id=74, 501.875pt x 50
+1.875pt>
+File: images/data-acquisition/example-backflip-marker-end.png Graphic file (typ
+e png)
+<use images/data-acquisition/example-backflip-marker-end.png>
+Package pdftex.def Info: images/data-acquisition/example-backflip-marker-end.pn
+g  used on input line 75.
+(pdftex.def)             Requested size: 142.26378pt x 142.26239pt.
+ [11 <./images/data-acquisition/example-backflip-marker-start.png> <./images/da
+ta-acquisition/example-backflip-marker-end.png>]
+[12]
+Overfull \hbox (14.12248pt too wide) in paragraph at lines 105--105
+|[]\OT1/cmr/bx/n/17.28 Estimating and Col-lect-ing Hu-man Ac-tion Poses| 
+ []
+
+) [13
 
 ]
 Chapter 4.
-(./sections/data-preprocessing.tex Excluding 'comment' comment.) [13
+(./sections/data-preprocessing.tex Excluding 'comment' comment.) [14
 
 ]
-(./main.bbl [14
+(./main.bbl [15
 
 ]
 
@@ -651,7 +657,7 @@ Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
 ) 
 AED: lastpage setting LastPage
-[15
+[16
 
 ]
 
@@ -660,13 +666,13 @@ See the caption package documentation for explanation.
 
 (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 9294 strings out of 480608
- 176263 string characters out of 5903630
- 414647 words of memory out of 5000000
- 25025 multiletter control sequences out of 15000+600000
+ 9298 strings out of 480608
+ 176401 string characters out of 5903630
+ 414694 words of memory out of 5000000
+ 25029 multiletter control sequences out of 15000+600000
  540680 words of font info for 53 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 41i,11n,49p,1369b,600s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,11n,49p,1470b,606s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-s
 uper-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/
@@ -674,10 +680,10 @@ cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sl12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 i12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm120
 0.pfb>
-Output written on main.pdf (18 pages, 18732073 bytes).
+Output written on main.pdf (19 pages, 18734636 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
+ 116 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

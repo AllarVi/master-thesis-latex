@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex main"] 1587716394 "main.aux" "main.bbl" "main" 1587716570
+["bibtex main"] 1587721061 "main.aux" "main.bbl" "main" 1587721068
   "/usr/local/texlive/2020/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
   "/usr/local/texlive/2020/texmf-dist/bibtex/bst/natbib/unsrtnat.bst" 1233624470 24550 a41a6405f4de768c43e871d9fbce2bc8 ""
-  "main.aux" 1587716569 4389 29a8c87828f8198596c8fa4d13624b8c "pdflatex"
+  "main.aux" 1587721067 4737 8502ec24ae7149abe365c4312073a84d "pdflatex"
   "references.bib" 1587099380 18256 4603d77ea04e2b2e09badf6169b447c9 ""
   (generated)
   "main.blg"
   "main.bbl"
-["pdflatex"] 1587716563 "main.tex" "main.pdf" "main" 1587716570
+["pdflatex"] 1587721062 "main.tex" "main.pdf" "main" 1587721068
   "/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -102,13 +102,13 @@
   "images/data-acquisition/example-flack-part-4.png" 1587130013 1171204 9b57188ea9a5d334c576d320892202e2 ""
   "images/data-acquisition/example-flack-part-5.png" 1587130046 1178465 883be46a42fdff1981a351c0dd10de4a ""
   "images/data-acquisition/example-flack-part-6.png" 1587130074 1195337 9831d3036cf961bbb26fdaf84b66aec0 ""
-  "main.aux" 1587716569 4389 29a8c87828f8198596c8fa4d13624b8c "pdflatex"
-  "main.bbl" 1587716395 275 de5ffaf5b665b622658d80bed97ba2a5 "bibtex main"
-  "main.lof" 1587716569 405 618d486787a5ede84ea22cf30eb62250 "pdflatex"
-  "main.lot" 1587716569 80 8ef3760424b18d5315040b0f3a94f59e "pdflatex"
-  "main.tex" 1587121628 3213 bf6475027d3fa7c7b50520d257c9bfe5 ""
-  "main.toc" 1587716569 2014 cbc4df5f3fdc252ebf69c86b93e04d32 "pdflatex"
-  "sections/data-acquisition.tex" 1587716560 6415 7a5adb17e5511c25b5b25f7f84939385 ""
+  "main.aux" 1587721067 4737 8502ec24ae7149abe365c4312073a84d "pdflatex"
+  "main.bbl" 1587721062 275 de5ffaf5b665b622658d80bed97ba2a5 "bibtex main"
+  "main.lof" 1587721067 405 618d486787a5ede84ea22cf30eb62250 "pdflatex"
+  "main.lot" 1587721067 80 8ef3760424b18d5315040b0f3a94f59e "pdflatex"
+  "main.tex" 1587721051 3213 bf6475027d3fa7c7b50520d257c9bfe5 ""
+  "main.toc" 1587721067 2096 944d8c7260f59772b9ccecc2b3239753 "pdflatex"
+  "sections/data-acquisition.tex" 1587721049 8223 829af20be4c3275aa8093717af3a01e0 ""
   "sections/data-preprocessing.tex" 1587120793 1715 b715da6e664b930beee88ce9d4f19f32 ""
   "sections/declaration.tex" 1587117122 565 b3f32e82914c10a1cb7063f394cb2f3d ""
   "sections/human-activity-recognition.tex" 1587120384 2318 7411adc10307def96569628ec5916184 ""
@@ -119,9 +119,9 @@
   "sections/title-eng.tex" 1587116950 863 f546da8d87eea310901a9c103197dc97 ""
   "sections/title-est.tex" 1587117006 687 1e88d31f06fefc952ce1703884349dc3 ""
   (generated)
-  "main.toc"
-  "main.lot"
-  "main.log"
   "main.aux"
+  "main.toc"
+  "main.log"
   "main.lof"
   "main.pdf"
+  "main.lot"
