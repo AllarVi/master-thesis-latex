@@ -93,7 +93,7 @@ A back handspring is similar to a backflip in that the athlete also rotates his 
     \label{example-back-handspring-markers}
 \end{figure*}
 
-\subsection{The Recording Process}
+\subsection{The Recording Process and Results}
 
 Since the types of movements under investigation are performed for a duration of time, just still images of activities are not sufficient. We need the activities recorded in some kind of motion picture format. The device used to capture activities for this paper is a GoPro Hero7 Black, with the following basic settings:
 
@@ -111,8 +111,28 @@ Since the types of movements under investigation are performed for a duration of
 
 Each activity is recorded as one still view from eye level fully showing the subjects body from head to toe. The \textit{three-quarter view} (\textit{two-thirds view}) is chosen to capture each activity. Choosing this angle avoids the limbs of the subject stacking behind each other in the recording. Similar works in this domain use either sophisticated three-dimensional motion capture systems using six cameras with depth sensors \cite{kinematic-back-handspring-analysis} or older works using bigger cameras and recording perpendicular to the plane of the movement \cite{Burgess2001KINEMATICAO}. While very thorough analyzes, taking into account the center of body mass or exact takeoff and landing angles, they are harder to reuse in a wider variety of difficult biomechanical movements. Mentioned works often require athletes to wear special gear (markers) and also require longer setup times for the recording cameras. The author of this work tries to emphasize on the potential for improving \textit{non-invasive field-based methods} to quantify and monitor technical biomechanical movements. In order to improve these methods, the hypothesis of this work is to use a single consumer camera setup accompanied with a pose estimation solution to achieve satisfactory results for recognizing technical gymnastic activities.
 
-\section{Estimating and Estimating Human Action Poses}
+The results of the recording process amounts to a total of 96 backflips and 84 back handsprings captured.
+
+\section{Estimating and Extracting Human Action Poses}
 \label{estimating-and-collecting-human-action-poses}
+
+The second section of this chapter focuses on the process of extracting human skeleton data from raw video files captured in the first section of this chapter. The skeleton data will be later preprocessed and used to train machine learning algorithms to recognize gymnastic activities.
+
+\subsection{Pose estimation}
+
+The aim of the author is to approach the problem of extracting skeleton data from raw videos using state-of-the-art methods. In recent years, some scientific papers have been released using machine learning based methods for estimating the human pose in images. For example, in 2015 an article was published, where convolutional neural networks were used to estimate human poses in videos \cite{poseestimation2015convnets}. These new methods exceed previous solutions in terms of prediction accuracy.
+
+Recently, even more complete solutions have been proposed, enabling to estimate human poses in real time thanks to their computational efficiency. For example, a method called \textit{Part Affinity Fields}, essentially a set of vectors encoding the direction of a body part, has been proposed. Every limb is described using an \textit{affinity field} between body parts \cite{cao2016realtime}. Such method is used by an open source solution called \textit{OpenPose} \cite{cao2018openpose}. OpenPose allows to identify the skeleton of a single person from video recorded with a monocamera in the same frame as other bystanders. This also allows the athlete's skeleton to be identified in an environment where other people are moving around in the background (a common sight in gymnastic centers).
+
+The author of this work hopes to build a practically usable prototype based on previous work in the pose estimation field. The author uses the free software OpenPose to estimate gymnastic movements. Alternatives to OpenPose that perform pose estimation include \textit{PoseNet} \cite{posenet} and \textit{wrnchAI} \cite{wrnchai}.
+
+\subsection{Infrastructure and Tools}
+
+\subsection{The Pose Estimation Process and Results}
+
+
+
+
 
 
 
