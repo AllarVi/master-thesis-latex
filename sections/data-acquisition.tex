@@ -133,7 +133,30 @@ The author of this work hopes to build a practically usable prototype based on p
 
 \subsection{Infrastructure and Tools}
 
+The mandatory requirement for using OpenPose's pose estimation in a reasonable time is a dedicated GPU unit and an access to its general purpose computing API \cite{openpose-requirements-and-dependencies}. The two main API's supported are CUDA for Nvidia GPU and OpenCL for an AMD GPU. Other tools for using OpenPose include CMake for compiling the OpenPose software and also Python programming environment to access OpenPose's API.
+
+A CPU-only setup of OpenPose is also supported, but highly advised by the author of this work to be used only for testing purposes. For software exploration purposes, the author compiled OpenPose on a 2015 MacBook Pro with a \textit{2,7 GHz Dual-Core Intel Core i5} CPU. The time required for pose estimation in a sample recording averaged to around 30 seconds for a single frame. Since using this setup for pose estimation for a total of 180 samples (recorded at 60 FPS) would result in an unreasonable time spent on this process, the author decided to use an Amazon GPU instance with the following basic settings:
+
+\begin{easylist}[itemize]
+
+& Operating system --- Ubuntu Server 18.04 LTS (HVM), SSD Volume Type
+& GPU instance --- g4dn.xlarge
+& Storage --- 16GB
+
+\end{easylist}
+
+After compiling OpenPose on the Amazon instance, an average pose estimation time of 0.08 seconds was achieved for a single frame in sample recordings.
+
 \subsection{The Pose Estimation Process and Results}
+
+\begin{comment}
+TODO: Python script
+TODO: Model used
+TODO: Sample data
+TODO: Total times
+\end{comment}
+
+
 
 
 
