@@ -120,11 +120,16 @@ The second section of this chapter focuses on the process of extracting human sk
 
 \subsection{Pose estimation}
 
-The aim of the author is to approach the problem of extracting skeleton data from raw videos using state-of-the-art methods. In recent years, some scientific papers have been released using machine learning based methods for estimating the human pose in images. For example, in 2015 an article was published, where convolutional neural networks were used to estimate human poses in videos \cite{poseestimation2015convnets}. These new methods exceed previous solutions in terms of prediction accuracy.
+\begin{comment}
+TODO: Add more history of pose estimation
+TODO: Add comparison to older skeleton extraction methods
+\end{comment}
 
-Recently, even more complete solutions have been proposed, enabling to estimate human poses in real time thanks to their computational efficiency. For example, a method called \textit{Part Affinity Fields}, essentially a set of vectors encoding the direction of a body part, has been proposed. Every limb is described using an \textit{affinity field} between body parts \cite{cao2016realtime}. Such method is used by an open source solution called \textit{OpenPose} \cite{cao2018openpose}. OpenPose allows to identify the skeleton of a single person from video recorded with a monocamera in the same frame as other bystanders. This also allows the athlete's skeleton to be identified in an environment where other people are moving around in the background (a common sight in gymnastic centers).
+The author's aim is to approach the problem of extracting skeleton data from raw videos using the most state-of-the-art methods. In recent years, some scientific papers have been released using machine learning based methods for estimating the human pose in images. For example, in 2015 an article was published, where convolutional neural networks were used to estimate human poses in videos \cite{poseestimation2015convnets}. These new methods exceed previous solutions in terms of prediction accuracy.
 
-The author of this work hopes to build a practically usable prototype based on previous work in the pose estimation field. The author uses the free software OpenPose to estimate gymnastic movements. Alternatives to OpenPose that perform pose estimation include \textit{PoseNet} \cite{posenet} and \textit{wrnchAI} \cite{wrnchai}.
+In recent years, even more complete solutions have been proposed, enabling to estimate human poses in real time thanks to their computational efficiency. For example, a method called \textit{Part Affinity Fields}, essentially a set of vectors encoding the direction of a body part, has been proposed. Every limb is described using an \textit{affinity field} between body parts \cite{cao2016realtime}. Such method is used by, for example, an open source solution called \textit{OpenPose} \cite{cao2018openpose}. OpenPose allows to estimate the skeletons of multiple humans from a video recorded with a monocamera. This enables the athlete's skeleton to be identified in an environment with bystanders in the background (a common sight in gymnastic centers).
+
+The author of this work hopes to build a practically usable prototype based on previous work in the pose estimation field. The author uses the free software OpenPose to estimate poses during gymnastic movements. Alternatives to OpenPose performing pose estimation include \textit{PoseNet} \cite{posenet} and \textit{wrnchAI} \cite{wrnchai}.
 
 \subsection{Infrastructure and Tools}
 
