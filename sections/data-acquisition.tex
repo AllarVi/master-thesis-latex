@@ -154,21 +154,28 @@ TODO: Model used
 TODO: Total times
 \end{comment}
 
-A separate Python module for extracting body key points was developed by the author \cite{openpose-python-pose-extraction-module}. The module uses Python wrapper of OpenCV to access each frame of each sample video. It then uses the Python wrapper of OpenPose on each frame to estimate poses. Finally, the module dumps extracted data to separate comma separated files. For each sample recording a separate directory is created. Each directory contains csv files with the filename pattern \textit{activityPerformed-sampleIndex-subjectName.mov-frameIndex-personIndex}, so for example, a valid filename would be \textit{backflip-1-allar.mov-46-0.csv}. A total of 19119 files were generated from 180 sample recordings. The figure \ref{sample-body-parts-by-openpose} shows an example output dumped into a csv file by the author's written Python OpenPose extraction module. The \textit{X} and \textit{Y} columns mark the corresponding coordinates and the \textit{Confidence} column represents the confidence factor by OpenPose when estimating body parts.
+A separate Python module for extracting body key points was developed by the author \cite{openpose-python-pose-extraction-module}. The module uses Python wrapper of OpenCV to access each frame of each sample video. It then uses the Python wrapper of OpenPose on each frame to estimate poses. Finally, the module dumps extracted data to separate comma separated files. For each sample recording a separate directory is created. Each directory contains csv files with the filename pattern \textit{activityPerformed-sampleIndex-subjectName.mov-frameIndex-personIndex}, so for example, a valid filename would be \textit{backflip-1-allar.mov-46-0.csv}. A total of 19119 files were generated from 180 sample recordings. The figure \ref{sample-body-parts-by-openpose} shows an example output dumped into a csv file by the author's written Python OpenPose extraction module. The \textit{X} and \textit{Y} columns mark the corresponding coordinates and the \textit{Confidence} column represents the confidence factor by OpenPose when estimating body parts. Finally, the \textit{I} column represents the body part index estimated by OpenPose. These indexes match the body part model \textit{BODY\_25} shown in figure \ref{pose-output-format}.
 
 \begin{figure*}
     \centering
-\begin{tabular}{c|c|c}
-    \bfseries X & \bfseries Y & \bfseries Confidence % specify table head
+\begin{tabular}{c|c|c|c}
+    \bfseries I & \bfseries X & \bfseries Y & \bfseries Confidence % specify table head
     \csvreader[head to column names]{openpose-output-sample.csv}{} % use head of csv as column names
-    {\\\hline\x & \y & \c} % specify your coloumns here
+    {\\\hline\i & \x & \y & \c} % specify your coloumns here
 \end{tabular}
     \caption{Sample body parts estimated by OpenPose for one frame}
     \label{sample-body-parts-by-openpose}
 \end{figure*}
 
+\begin{figure*}
+    \centering
+    \includegraphics[width=10cm]{images/data-acquisition/keypoints-pose-25.png}
+    \caption{Pose Output Format --- BODY\_25}
+    \label{pose-output-format}
+\end{figure*}
 
 
+The extraction module automatically ran for every sample and generated a total of 19119 csv files. To give it some context, 19119 csv files amount to 5 minutes and 19 seconds of backflips and back handsprings recorded. Using the Amazon GPU instance, the total duration for processing all samples took less than 30 minutes. An estimate could be made for running the same process on a 2015 MacBook Pro with CPU-only setup. The process would take around 6 days and 15 hours if estimated on the basis that the average processing time of each frame is 30 seconds. In conclusion, running the process on an Amazon GPU instance is vaguely more than 300 times faster. This concludes this chapter on data acquisition. The next chapter explores how this data is explored and preprocessed for machine learning training.
 
 
 
