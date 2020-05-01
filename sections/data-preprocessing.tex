@@ -1,41 +1,41 @@
 \begin{comment}
 
-Keywords:
-
-    - [x, y, t, p, a, l]
-    - JSON -> Dataframe
-    - [x, y, t, p, a, l, stroke number]
-    - Pandas Dataframe, effectively store and analyze 
-    - Dataframe + Metadata = Drawing Entity
-    - Outliers removal 
-    
-        In statistics, an outlier is an observation point that is distant from other observations. An outlier may be due to variability in the measurement or it may indicate experimental error; the latter are sometimes excluded from the data set.
-        
-        Our approach was to remove the outlier points by eliminating any points that were above (Mean + 2*SD) and any points below (Mean - 2*SD) before plotting the frequencies
-        
-        For a random variable vector A made up of N scalar observations, the median absolute deviation (MAD) is defined as
-
-        MAD = median(A
-        i
-        −median(A))
-        for i = 1,2,...,N.
-        
-        
-        For example, isoutlier(A,'mean') returns true for all elements more than three standard deviations from the mean.
-        
+TODO: Data exploration
+TODO: Data pre-processing
+TODO: Dealing with missing data
+TODO: Moving average smoothing
+TODO: Results
 
 \end{comment}
 
-\section{Data description}
+An essential step between acquiring of the data and passing it to machine learning algorithms is ensuring that the dataset used for training represents our learning objectives. In this case, our learning objective is to train the system to recognize two of the well-known gymnastics movements - the backflip and the back handspring. A well-balanced and interpretable dataset is necessary for avoiding overfitting or biasing the machine learning model to a specific dataset. 
 
-\section{Drawing Entity}
+In the section \ref{data-exploration}, we start by sampling the data and visualizing it to better understand the pose estimation results obtained in the previous chapter. Then, based on the observations, pre-processing strategies for overcoming the shortcomings of the dataset are proposed by the author in section \ref{data-pre-processing-strategies} and lastly the final dataset, ready to be used for machine learning, is described in the \ref{pre-processing-results} section of this chapter.
 
-% Pandas dataframe is two-dimensional matrix with labeled columns and rows. Columns can potentially store different types of data. We can think of dataframe as a spreadsheet or SQL table.
+\section{Data exploration}
+\label{data-exploration}
 
-% Two-dimensional size-mutable, potentially heterogeneous tabular data structure with labeled axes (rows and columns). Arithmetic operations align on both row and column labels. Can be thought of as a dict-like container for Series objects. The primary pandas data structure
+\begin{figure}[htb]
+  \centering
+    \includegraphics[width=14cm]
+    {images/data-preprocessing/flack-17-rasmus-l-heel-y-raw}
+    \caption{JSON to Drawing Entity Conversion --- Flow Diagram}
+    \label{alg-drawing}
+\end{figure}
 
-% (Table \ref{dataframe} on page \pageref{dataframe})
+\section{Data pre-processing strategies}
+\label{data-pre-processing-strategies}
 
-\subsection{Outlier removal}
+\subsection{Dealing with low confidence keypoints}
 
-\subsection{JSON to Drawing entity Conversion}
+\subsection{Moving average smoothing}
+
+\subsection{Unrecognizable body parts}
+
+\subsection{Considerations for bystanders}
+
+\section{Results}
+\label{pre-processing-results}
+
+
+
