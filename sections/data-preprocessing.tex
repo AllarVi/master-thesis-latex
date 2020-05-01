@@ -15,18 +15,55 @@ In the section \ref{data-exploration}, we start by sampling the data and visuali
 \section{Data exploration}
 \label{data-exploration}
 
+During the data acquisition phase, individual csv files (figure \ref{sample-body-parts-by-openpose}) were generated for each frame of each sample recording. Since the data is generated for each frame, one suitable visualization method is the time-series line plot. Each frame's data also contains 25 estimated keypoints and both \textit{X} and \textit{Y} coordinates for each keypoint. Given the amount of dimensions for such dataset, a sample set with the following parameters is chosen for demonstration purposes:
+
+\begin{easylist}[itemize]
+
+& \textit{Sample activity} --- Back handspring
+& \textit{Sample no.} --- 17
+& \textit{Keypoint index} --- 21 (left heel), figure \ref{pose-output-format}
+& \textit{Axis} --- Y
+
+\end{easylist}
+
+There is no particular reason for choosing the left heel of the subject, other than given the rotation of the subject's body during the sample activity, we can expect the data range of the left heel's position to vastly differ on the \textit{Y} axis. This is because the subject's body will be upside down at some point during the movement.
+
+The figure \ref{lack-17-rasmus-l-heel-y-raw} represents the subject's left heel's trajectory along the \textit{Y} axis during the back handspring. For the first second of the activity, the pose estimation seems to not have problems recognizing the left heel during the momentum generation phase. For the takeoff, rotation and landing phase the pose estimation's confidence score falls under the threshold and results in filling the low confidence frames with the zero values. This makes the data not usable by machine learning algorithms, since such strong deviations can be labeled as anomalies and will most likely strongly affect the gradient computed during the backpropagation, ultimately making the algorithms learn something else besides the activities investigated.
+
 \begin{figure}[htb]
   \centering
-    \includegraphics[width=14cm]
+    \includegraphics[width=\textwidth,keepaspectratio]
     {images/data-preprocessing/flack-17-rasmus-l-heel-y-raw}
-    \caption{JSON to Drawing Entity Conversion --- Flow Diagram}
-    \label{alg-drawing}
+    \caption{Subject's left heel's trajectory during the back handspring - Raw}
+    \label{lack-17-rasmus-l-heel-y-raw}
 \end{figure}
 
 \section{Data pre-processing strategies}
 \label{data-pre-processing-strategies}
 
+Four mitigation steps are chosen to overcome the shortcomings of initial pose estimation results. It is worth mentioning, that for more clear interpretation purposes the strategies described in next sections are demonstrated on a single sample. Python scripts were developed by the author to automatically apply all pre-processing strategies on every sample's every body part for all frames.
+
 \subsection{Dealing with low confidence keypoints}
+
+During the pose estimation process described in Chapter \ref{data-acquisition}, a confidence score in the range of 0-1 is issued for each keypoint by OpenPose. The confidence score represents OpenPose's certainty when determining keypoints of the subject. Confidence score of 0 by OpenPose means the system fails to estimate a particular body part in a frame. 
+
+A simple algorithm was implemented by the author to fill the missing keypoints, moving through frames and filling missing keypoints with the averages of existing ones, figure \ref{moving-average-filling-algorithm}. The improved sample subject's left heel's trajectory can been seen on figure \ref{lack-17-rasmus-l-heel-y-filled}.
+
+\begin{figure}[htb]
+  \centering
+    \includegraphics[width=0.7\textwidth,keepaspectratio]
+    {images/data-preprocessing/moving-average-filling-algorithm}
+    \caption{Moving average filling algorithm}
+    \label{moving-average-filling-algorithm}
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+    \includegraphics[width=\textwidth,keepaspectratio]
+    {images/data-preprocessing/flack-17-rasmus-l-heel-y-filled}
+    \caption{Subject's left heel's trajectory during the back handspring - Filled}
+    \label{lack-17-rasmus-l-heel-y-filled}
+\end{figure}
 
 \subsection{Moving average smoothing}
 
