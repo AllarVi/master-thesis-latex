@@ -10,12 +10,12 @@ TODO: Results
 
 An essential step between acquiring of the data and passing it to machine learning algorithms is ensuring that the dataset used for training represents our learning objectives. In this case, our learning objective is to train the system to recognize two of the well-known gymnastics movements - the backflip and the back handspring. A well-balanced and interpretable dataset is necessary for avoiding overfitting or biasing the machine learning model to a specific dataset. 
 
-In the section \ref{data-exploration}, we start by sampling the data and visualizing it to better understand the pose estimation results obtained in the previous chapter. Then, based on the observations, pre-processing strategies for overcoming the shortcomings of the dataset are proposed by the author in section \ref{data-pre-processing-strategies} and lastly the final dataset, ready to be used for machine learning, is described in the \ref{pre-processing-results} section of this chapter.
+In section \ref{data-exploration}, we start by sampling the data and visualizing it to better understand the pose estimation results obtained in the previous chapter. Then, based on the observations, pre-processing strategies for overcoming the shortcomings of the dataset are proposed by the author in section \ref{data-pre-processing-strategies} and lastly the final dataset, ready to be used for machine learning, is described in the \ref{pre-processing-results} section of this chapter.
 
 \section{Data exploration}
 \label{data-exploration}
 
-During the data acquisition phase, individual csv files (figure \ref{sample-body-parts-by-openpose}) were generated for each frame of each sample recording. Since the data is generated for each frame, one suitable visualization method is the time-series line plot. Each frame's data also contains 25 estimated keypoints and both \textit{X} and \textit{Y} coordinates for each keypoint. Given the amount of dimensions for such dataset, a sample set with the following parameters is chosen for demonstration purposes:
+During the data acquisition phase, individual csv files (figure \ref{sample-body-parts-by-openpose}) were generated for each frame of each sample recording. Since the data is generated for each frame, one suitable visualization method is the time-series line plot. Each frame's data contains 25 estimated keypoints, both \textit{X} and \textit{Y} coordinates for each keypoint and also the Confidence Score issued by OpenPose. Given the amount of dimensions for such dataset, a sample entity with the following parameters is chosen for demonstration purposes:
 
 \begin{easylist}[itemize]
 
@@ -34,20 +34,20 @@ The figure \ref{lack-17-rasmus-l-heel-y-raw} represents the subject's left heel'
   \centering
     \includegraphics[width=\textwidth,keepaspectratio]
     {images/data-preprocessing/flack-17-rasmus-l-heel-y-raw}
-    \caption{Subject's left heel's trajectory during the back handspring - Raw}
+    \caption{Subject's left heel trajectory during the back handspring - Raw data}
     \label{lack-17-rasmus-l-heel-y-raw}
 \end{figure}
 
 \section{Data pre-processing strategies}
 \label{data-pre-processing-strategies}
 
-Four mitigation steps are chosen to overcome the shortcomings of initial pose estimation results. It is worth mentioning, that for more clear interpretation purposes the strategies described in next sections are demonstrated on a single sample. Python scripts were developed by the author to automatically apply all pre-processing strategies on every sample's every body part for all frames.
+Four mitigation steps are chosen to overcome the shortcomings of initial pose estimation results. It is worth mentioning, that for clear interpretation purposes the strategies described in next sections are demonstrated on a single sample. Python scripts were developed by the author to automatically apply all pre-processing strategies on every sample's every body part for all frames.
 
 \subsection{Dealing with low confidence keypoints}
 
-During the pose estimation process described in Chapter \ref{data-acquisition}, a confidence score in the range of 0-1 is issued for each keypoint by OpenPose. The confidence score represents OpenPose's certainty when determining keypoints of the subject. Confidence score of 0 by OpenPose means the system fails to estimate a particular body part in a frame. 
+During the pose estimation process described in Chapter \ref{data-acquisition}, a confidence score in the range of 0-1 is issued for each keypoint by OpenPose. The confidence score represents OpenPose's certainty when determining keypoints of the subject. Confidence score of 0 by OpenPose means the system fails to estimate a particular body part in a frame. For a keypoint with confidence score approaching 1, translates to a high confidence in detecting the specific keypoint. 
 
-A simple algorithm was implemented by the author to fill the missing keypoints, moving through frames and filling missing keypoints with the averages of existing ones, figure \ref{moving-average-filling-algorithm}. The improved sample subject's left heel's trajectory can been seen on figure \ref{lack-17-rasmus-l-heel-y-filled}.
+A simple algorithm was implemented by the author to fill the missing keypoints - moving through frames and filling missing keypoints with the averages of existing keypoint with positive confidence score, figure \ref{moving-average-filling-algorithm}. The improved sample's subject left heel trajectory can been seen on figure \ref{lack-17-rasmus-l-heel-y-filled}.
 
 \begin{figure}[htb]
   \centering
@@ -61,7 +61,7 @@ A simple algorithm was implemented by the author to fill the missing keypoints, 
   \centering
     \includegraphics[width=\textwidth,keepaspectratio]
     {images/data-preprocessing/flack-17-rasmus-l-heel-y-filled}
-    \caption{Subject's left heel's trajectory during the back handspring - Filled}
+    \caption{Subject's left heel trajectory during the back handspring - Filled}
     \label{lack-17-rasmus-l-heel-y-filled}
 \end{figure}
 
