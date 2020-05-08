@@ -34,7 +34,7 @@ The figure \ref{lack-17-rasmus-l-heel-y-raw} represents the subject's left heel'
   \centering
     \includegraphics[width=\textwidth,keepaspectratio]
     {images/data-preprocessing/flack-17-rasmus-l-heel-y-raw}
-    \caption{Subject's left heel trajectory during the back handspring - Raw data}
+    \caption{Subject's left heel trajectory during the back handspring - raw data}
     \label{lack-17-rasmus-l-heel-y-raw}
 \end{figure}
 
@@ -61,11 +61,29 @@ A simple algorithm was implemented by the author to fill the missing keypoints -
   \centering
     \includegraphics[width=\textwidth,keepaspectratio]
     {images/data-preprocessing/flack-17-rasmus-l-heel-y-filled}
-    \caption{Subject's left heel trajectory during the back handspring - Filled}
+    \caption{Subject's left heel trajectory during the back handspring - filled}
     \label{lack-17-rasmus-l-heel-y-filled}
 \end{figure}
 
 \subsection{Moving average smoothing}
+
+During the pose estimation process described in section \ref{pose-estimation-process-and-results}, the OpenCV library is used to access each frame of the recordings. The frame's data is then fed into OpenPose's estimation function and estimated keypoints are obtained for each frame. The process is stateless by design, so nor previous or next estimations are taken into account when estimating the current frame. This results in fine-grained variations between frames. \textit{Moving Average Smoothing} is a technique applied to time series data in hope to remove noise and better expose the signal of the underlying process.
+
+We define the moving average as follows:
+
+\begin{equation}
+x(t) = \dfrac{1}{n}\sum\limits_{i=-\left\lfloor{\dfrac{n}{2}}\right\rfloor}^{\left\lfloor{\dfrac{n}{2}}\right\rfloor}x_{t+i}
+\end{equation}
+
+, where n is 3 and defined as the width of the moving window.  Figure \ref{lack-17-rasmus-l-heel-y-smoothed} displays the transformed left heel's trajectory after applying the smoothing technique.
+
+\begin{figure}[htb]
+  \centering
+    \includegraphics[width=\textwidth,keepaspectratio]
+    {images/data-preprocessing/flack-17-rasmus-l-heel-y-smoothed}
+    \caption{Subject's left heel trajectory during the back handspring - smoothed}
+    \label{lack-17-rasmus-l-heel-y-smoothed}
+\end{figure}
 
 \subsection{Unrecognizable body parts}
 

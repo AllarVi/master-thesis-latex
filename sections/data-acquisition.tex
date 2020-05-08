@@ -16,7 +16,11 @@ Keywords:
 
 \end{comment}
 
-As with most problems potentially solvable by implementing machine learning based solutions, the data to be explored and used to train machine learning models plays central part in our implementation. Although, machine learning promises to loosen the strictness of the data used in a system by trying to generalize and adapt the models themselves to the data, the quality of the initial data used to develop prototypes still directly influences the interpretation and value of the outcome. Interpretation of not only the outcome, but the entire solution is needed to have clear understanding of why certain outcomes exist, which in turn helps to spark discussion and spread knowledge gained during an experiment. The value of this research, reusable by peers for new scientific experiments, is also directly influenced by the quality of the initial data. The author of this work is aware, that by choosing a very niche dataset he risks to reduce the social reach of this work and thereby stresses to point that he mainly wishes to contribute his finding to the human activity recognition domain and not necessarily to the specific sports domain of gymnastics.
+In order to combine gymnastics activity recognition and computer vision, the data acquisition phase of this thesis begins by collecting the recordings of athletes performing gymnastic activities. The activities chosen are the backflip (section \ref{backflip-description-section}) and the back handspring (section \ref{back-handspring-description-section}). The motivation behind the chosen activities is that these activities are some of the foundation exercises that athletes use as building blocks for more difficult combinations. These activities are particularly interesting since even seasoned athletes use them in their training regime and try to polish their technique throughout their whole career. The recordings are collected by a consumer grade action camera (section \ref{the-recordings-process-and-results}). After recording the activities, human skeleton data will be extracted from the videos using computer vision's technique called \textit{pose estimation}, an important step to transform the data from video format to a data format more suitable for training machine learning models to recognize the activities.
+
+The data to be explored and used to train machine learning models in this thesis plays central part in our implementation. Although, machine learning promises to loosen the strictness of the data used in a system by trying to generalize and adapt the models themselves to the data, the quality of the initial data used to develop prototypes still directly influences the interpretation and value of the outcome. Interpretation of not only the outcome, but the entire solution is needed to have clear understanding of why certain outcomes exist, which in turn helps to spark discussion and spread knowledge gained during an experiment. The value of this research, reusable by peers for new scientific experiments, is also directly influenced by the quality of the initial data. 
+
+% The author of this work is aware, that by choosing a very niche dataset he risks to reduce the social reach of this work and thereby stresses to point that he mainly wishes to contribute his finding to the human activity recognition domain and not necessarily to the specific sports domain of gymnastics.
 
 The data acquisition chapter is split into two parts. The first part (\ref{recording-human-actions}) explains what kind and how much of data the author is collecting and the process behind it. The second part (\ref{estimating-and-collecting-human-action-poses}) explains a more technical approach on how the initial data for the human activity recognition algorithm is acquired from recorded human motions and the tools used to do so.
 
@@ -94,6 +98,7 @@ A back handspring is similar to a backflip in that the athlete also rotates his 
 \end{figure*}
 
 \subsection{The Recording Process and Results}
+\label{the-recordings-process-and-results}
 
 Since the types of movements under investigation are performed for a duration of time, just still images of activities are not sufficient. We need the activities recorded in some kind of motion picture format. The device used to capture activities for this paper is a GoPro Hero7 Black, with the following basic settings:
 
@@ -148,6 +153,7 @@ A CPU-only setup of OpenPose is also supported, but highly advised by the author
 After compiling OpenPose on the Amazon instance, an average pose estimation time of 0.08 seconds was achieved for a single frame in sample recordings.
 
 \subsection{The Pose Estimation Process and Results}
+\label{pose-estimation-process-and-results}
 
 \begin{comment}
 TODO: Model used
