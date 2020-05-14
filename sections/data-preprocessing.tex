@@ -86,10 +86,24 @@ x(t) = \dfrac{1}{n}\sum\limits_{i=-\left\lfloor{\dfrac{n}{2}}\right\rfloor}^{\le
 
 \subsection{Unrecognizable body parts}
 
-\subsection{Considerations for bystanders}
+One limitation worth mentioning when using the pose estimation technique is the contrast between the background and the athlete in the recordings. In low light and low contrast environments, the body parts of an athlete are not easily recognizable (as demonstrated in figure \ref{example-of-unrecognizable-backflip}), which leads to low confidence score for some body parts and makes it impossible to construct a full skeleton. Possible solutions (not explored in this thesis), to improve the recognition of body parts in low contrast environments, include controlling the contrast of the recordings with some post production software or rerecording the activities with athletes wearing clothes with a higher contrast against the background. For this thesis, however, the samples with unrecognizable body parts were left out of the dataset during the preprocessing phase.
+
+\begin{figure*}
+   \centering
+\begin{tabular}{ccc}
+\includegraphics[width=5cm]{images/data-preprocessing/unrec-backflip-part-1}&
+\includegraphics[width=5cm]{images/data-preprocessing/unrec-backflip-part-2}&
+\includegraphics[width=5cm]{images/data-preprocessing/unrec-backflip-part-3}\\
+\includegraphics[width=5cm]{images/data-preprocessing/unrec-backflip-part-4}&
+\includegraphics[width=5cm]{images/data-preprocessing/unrec-backflip-part-5}&
+\includegraphics[width=5cm]{images/data-preprocessing/unrec-backflip-part-6}\\
+\end{tabular}
+    \caption{The movement of some body parts for this backflip are unrecognizable}
+    \label{example-of-unrecognizable-backflip}
+\end{figure*}
 
 \section{Results}
 \label{pre-processing-results}
 
-
+The final dataset yielded after applying all pre-processing strategies consists of 51 backflip and 62 back handspring samples. 
 
