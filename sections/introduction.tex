@@ -16,11 +16,17 @@ At the time of writing, the most common methods for analyzing gymnastics movemen
 
 \section{Human Activity Recognition Background}
 
-Human activity recognition taxonomy can be challenging as the diversity of available methods is impressive. The method used to automate gymnastics activity recognition in this paper is categorized as a \textit{unimodal shape-based method} (see \cite{10.3389/frobt.2015.00028}). What does it mean? Why are am I choosing this?
+Human activity recognition taxonomy can be challenging as the diversity of available methods is extensive. Broad categorization of human activity recognition methods is depicted on figure \ref{har-taxonomy}, which is proposed in article \cite{10.3389/frobt.2015.00028}. The method used to automate gymnastics activity recognition in this paper is categorized as a \textit{unimodal shape-based method}. While identifying gymnastics movements from multiple modalities (i.e. the addition of behavioral or emotional features) could provide useful data for the analysis, it would require the usage of more invasive tools, such as microphones and physical sensors. The aim of the author is to develop a recognition method less invasive and also free of physical attachments. For example, in competition environments, athletes are not allowed to wear any extra technological gear and the only viable method for recording the activity is the video modality. 
 
-\subsection{Human Activity Types}
+Narrowing down on unimodal methods and taking into consideration the non-invasiveness of shape-based methods, brings the author to a method called \textit{pose estimation}, a popular research topic the last 10 years. More recently, computationally effective methods for 2D pose estimation in real-time using Part Affinity Fields have been proposed \cite{DBLP:journals/corr/CaoSWS16}. This method is also used by the OpenPose software \cite{DBLP:journals/corr/abs-1812-08008}, which is the choice of pose estimation software in this research. 
 
-\subsection{Recognition Types}
+\begin{figure}[htb]
+  \centering
+    \includegraphics[width=\textwidth,keepaspectratio]
+    {images/introduction/har-taxonomy}
+    \caption{Hierarchical categorization of human activity recognition methods}
+    \label{har-taxonomy}
+\end{figure}
 
 % tendency showing movement in direction of different tests digitized versions
 
