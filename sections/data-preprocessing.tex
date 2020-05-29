@@ -102,8 +102,32 @@ One limitation worth mentioning when using the pose estimation technique is the 
     \label{example-of-unrecognizable-backflip}
 \end{figure*}
 
+\subsection{Centering to unified coordinate origin}
+
+Inspired by data pre-processing methods in \cite{hierarchical-rnn-har}, the authors Yong Du, Wei Wang and Liang Wang remarkably point out that human actions are independent of its absolute spatial position. Since the starting coordinates of gymnastics movements were not defined prior to recording the actions, normalizing the samples to a unified coordinate origin greatly decreases fluctuations between the same features. All samples in this paper are normalized to the coordinate system origin using the middle hip keypoint indexed as 8 in the \textit{BODY\_25} model. The figure \ref{centered-backflip-4-rasmus} demonstrates how the skeleton moves relative to the coordinate system origin after normalization.
+
+\begin{figure*}
+   \centering
+\begin{tabular}{ccc}
+\includegraphics[width=5cm]{images/data-preprocessing/centered-backflip-orig-part-1}&
+\includegraphics[width=5cm]{images/data-preprocessing/centered-backflip-orig-part-2}&
+\includegraphics[width=5cm]{images/data-preprocessing/centered-backflip-orig-part-3}\\
+\includegraphics[width=5cm]{images/data-preprocessing/centered-backflip-skel-part-1}&
+\includegraphics[width=5cm]{images/data-preprocessing/centered-backflip-skel-part-2}&
+\includegraphics[width=5cm]{images/data-preprocessing/centered-backflip-skel-part-3}\\
+\includegraphics[width=5cm]{images/data-preprocessing/centered-backflip-orig-part-4}&
+\includegraphics[width=5cm]{images/data-preprocessing/centered-backflip-orig-part-5}&
+\includegraphics[width=5cm]{images/data-preprocessing/centered-backflip-orig-part-6}\\
+\includegraphics[width=5cm]{images/data-preprocessing/centered-backflip-skel-part-4}&
+\includegraphics[width=5cm]{images/data-preprocessing/centered-backflip-skel-part-5}&
+\includegraphics[width=5cm]{images/data-preprocessing/centered-backflip-skel-part-6}\\
+\end{tabular}
+    \caption{Backflip sample centered to coordinate system origin}
+    \label{centered-backflip-4-rasmus}
+\end{figure*}
+
 \section{Results}
 \label{pre-processing-results}
 
-The final dataset yielded after applying all pre-processing strategies consists of 51 backflip and 62 back handspring samples. 
+The final dataset yielded after applying all pre-processing strategies consists of 51 backflip and 62 back handspring samples, totaling to 113 samples. 
 

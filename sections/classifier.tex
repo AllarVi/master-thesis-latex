@@ -59,13 +59,35 @@ StratifiedKFold implementation of $Scikit-learn$
 
 \end{comment}
 
+As demonstrated in a recent research by Farzan Majeed Noori,
+Benedikte Wallace, Md. Zia Uddin and Jim Torresen in \cite{10.1007/978-3-030-20205-7_25}, a combined architecture of using OpenPose for pose estimation and Recurrent Neural Networks (RNN) for human activity recognition could prove as the new state-of-the-art solution for robust and non-intrusive human activity recognition. In the cited research, OpenPose was used to extract keypoints from a subset of the Berkeley Multimodal Human Action Database (BMHAD) \cite{Berkeley-MHAD}. What makes it remarkable, is the classification accuracy obtained using a Recurrent Neural Network with Long Short-term Memory (LSTM) cells over more conventional machine learning classifiers, such as Support Vector Machines, Decision Trees and Random Forests. Since the dataset contained human activities recorded from different angles, the solution is also view-invariant, which also increases the robustness of this solution. The difference of the cited work and current work is the custom dataset constructed for gymnastics based movements. The BMHAD dataset includes 11 more general activities, such as jumping jacks, waving and clapping. The approach used in the current thesis uses a similar LSTM-based solution to train a classifier to recognize more complex biomechanical activities including human body rotations and airtime, such as backflips and back-handsprings. 
+
 \section{Methodology}
 
 \subsection{Classifier Algorithms}
 
+An RNN with LSTM cells was implemented. The model used in this work consist of a LSTM layer with 2 hidden units, a dropout layer with a 0.5 rate to prevent overfitting and two dense layers. The last output layer is a dense
+layer with softmax activation and 2 units representing the different activities.
+Categorical cross entropy is used as the loss function during batch gradient
+descent and Adam with a learning rate of 0.001, is used as the optimizer.
+
 \subsection{Classifier Validation}
 
+Validating the correctness of our RNN training requires the usage of some common classifier validation techniques. Firstly, the sample data is split by 0.2 rate between training and testing data in order to test for unbiased results when the model training has stopped. A validation split of 0.33 rate is also used while training the RNN to observe the loss and accuracy of the model, essential to help with hyperparameter tuning. The figure \ref{model-validation-monitoring} demonstrates how the LSTM model accuracy and loss are monitored during epochs in order to detect overfitting or underfitting. Lastly, the training is repeated on 5 unconnected models.
+
+\begin{figure*}
+   \centering
+\begin{tabular}{cc}
+\includegraphics[width=7.5cm]{images/classifier/model-train-vs-validation-accuracy}&
+\includegraphics[width=7.5cm]{images/classifier/model-train-vs-validation-loss}\\
+\end{tabular}
+    \caption{Monitoring for model accuracy and loss to detect overfitting/underfitting}
+    \label{model-validation-monitoring}
+\end{figure*}
+
 \subsection{Classifier Training Process}
+
+Due to the small sample data size, the LSTM classifier is trained for 15 epochs with stochastic gradient descent. An early stopping hook is also implemented to monitor for validation loss improvements. No improvements in validation loss commonly indicate that the network has stopped learning and is starting to overfit to the training data. After 3 epochs with no improvements the hook stops the learning process of the neural network. The hyperparameters are empirically selected for the classifier, with the goal to maximize the accuracy while preventing overfitting.
 
 \section{Classifier Analysis}
 
