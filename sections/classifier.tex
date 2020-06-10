@@ -60,16 +60,28 @@ StratifiedKFold implementation of $Scikit-learn$
 \end{comment}
 
 As demonstrated in a recent research by Farzan Majeed Noori,
-Benedikte Wallace, Md. Zia Uddin and Jim Torresen in \cite{10.1007/978-3-030-20205-7_25}, a combined architecture of using OpenPose for pose estimation and Recurrent Neural Networks (RNN) for human activity recognition could prove as the new state-of-the-art solution for robust and non-intrusive human activity recognition. In the cited research, OpenPose was used to extract keypoints from a subset of the Berkeley Multimodal Human Action Database (BMHAD) \cite{Berkeley-MHAD}. What makes it remarkable, is the classification accuracy obtained using a Recurrent Neural Network with Long Short-term Memory (LSTM) cells over more conventional machine learning classifiers, such as Support Vector Machines, Decision Trees and Random Forests. Since the dataset contained human activities recorded from different angles, the solution is also view-invariant, which also increases the robustness of this solution. The difference of the cited work and current work is the custom dataset constructed for gymnastics based movements. The BMHAD dataset includes 11 more general activities, such as jumping jacks, waving and clapping. The approach used in the current thesis uses a similar LSTM-based solution to train a classifier to recognize more complex biomechanical activities including human body rotations and airtime, such as backflips and back-handsprings. 
+Benedikte Wallace, Md. Zia Uddin and Jim Torresen in \cite{10.1007/978-3-030-20205-7_25}, a combined architecture of using OpenPose for pose estimation and Recurrent Neural Networks (RNN) for human activity recognition could prove as the new state-of-the-art solution for robust and non-intrusive human activity recognition. In the cited research, OpenPose was used to extract keypoints from a subset of the Berkeley Multimodal Human Action Database (BMHAD) \cite{Berkeley-MHAD}. What makes it remarkable, is the classification accuracy obtained using a Recurrent Neural Network with Long Short-term Memory (LSTM) cells over more conventional machine learning classifiers, such as Support Vector Machines, Decision Trees and Random Forests. Since the dataset contained human activities recorded from different angles, the solution is also view-invariant, which also increases the robustness of this solution. Another paper, a technical report by Chinmay Sawant \cite{sawant2020human}, also supports the combination of OpenPose with LSTMs for time-series classification, reporting similar accuracy results in real-time application on the same BMHAD dataset, making use of the efficiency of this solution.
+
+The difference of the cited work and current work is the custom dataset constructed for gymnastics based movements. In contrast to the BMHAD dataset, which includes 11 general activities, such as jumping jacks, waving and clapping, the dataset used in the current thesis uses more complex biomechanical activities, including human body rotations and airtime, such as backflips and back-handsprings. The author of this paper expects RNNs used for general action recognition to also be applicable to gymnastics movements. The goal of this research is to validate this hypothesis and investigate neural networks most suitable for gymnastics action recognition. 
 
 \section{Methodology}
 
+To develop neural networks capable of recognizing gymnastics movements, a combination of empirical knowledge with the mathematical theory of artificial neural networks is used as the starting point. The development process starts by training a simple RNN neural network with gymnastics data and analyzing the results. TODO: Why?. An iterative process is used to train, validate, analyze and compare the results of each classifier. The steps followed in the current thesis are represented in figure TODO: add figure.
+
 \subsection{Classifier Algorithms}
 
-An RNN with LSTM cells was implemented. The model used in this work consist of a LSTM layer with 2 hidden units, a dropout layer with a 0.5 rate to prevent overfitting and two dense layers. The last output layer is a dense
-layer with softmax activation and 2 units representing the different activities.
+Classifier algorithms experimented with in the thesis are:
+
+\begin{easylist}[itemize]
+
+& \textit{Simple RNN} --- TODO
+& \textit{Hierarchical RNN} --- TODO
+& \textit{Simple LSTM} --- An RNN with LSTM cells was implemented. The model used in this work consist of a LSTM layer with 2 hidden units, a dropout layer with a 0.5 rate to prevent overfitting and two dense layers. The last output layer is a dense
+layer with softmax activation with 2 units representing the different activities.
 Categorical cross entropy is used as the loss function during batch gradient
 descent and Adam with a learning rate of 0.001, is used as the optimizer.
+
+\end{easylist}
 
 \subsection{Classifier Validation}
 
