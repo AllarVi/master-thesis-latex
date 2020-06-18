@@ -68,24 +68,45 @@ The difference of the cited work and current work is the custom dataset construc
 
 To develop neural networks capable of recognizing gymnastics movements, a combination of empirical knowledge with the mathematical theory of artificial neural networks is used as the starting point. The development process starts by training a simple RNN neural network with gymnastics data and analyzing the results. TODO: Why?. An iterative process is used to train, validate, analyze and compare the results of each classifier. The steps followed in the current thesis are represented in figure TODO: add figure.
 
+\subsection{Classifier Prerequisites}
+
+Two prerequisites before feeding training data to the classifiers include:
+
+\begin{easylist}[itemize]
+
+& \textit{Zero-padding} --- Gymnastics activities performed vary in their length and in order to keep the classifier dimensions static, the samples are zero-padded. Zero-padding is done by finding the longest sample performed and increasing the timesteps of other samples with zero values until they are equal in length to the longest sample. 
+& \textit{Feature reduction} --- Recurrent neural networks are prone to overfitting and with the combination of the author's domain knowledge about gymnastics, the 25 total keypoints obtained during pose estimation are reduced to 15, filtering out less prominent keypoints necessary to recognize gymnastics movements. The 15 keypoints used for classification include the trunk, head and limbs of the skeleton.
+
+\end{easylist}
+
+
 \subsection{Classifier Algorithms}
 
 Classifier algorithms experimented with in the thesis are:
 
 \begin{easylist}[itemize]
 
-& \textit{Simple RNN} --- TODO
+& \textit{Simple RNN} --- The first classifier (shown in figure \ref{simple-rnn-network-layers}) experimented with is a network model with one simple recurrent layer. The recurrent layer consists of 2 units, chosen accordingly to the amount of outputs the network produces - the movements is either a backflip or a back handspring. A dropout layer with a 0.5 rate to prevent overfitting is added next. An activation layer with rectified linear units follows with a flattening layer to reduce dimensions and finally an output layer with softmax activation is used for representing the different activities. Categorical cross entropy is used as the loss function during stochastic gradient descent with an Adam optimizer with a learning rate of 0.001. 
 & \textit{Hierarchical RNN} --- TODO
-& \textit{Simple LSTM} --- An RNN with LSTM cells was implemented. The model used in this work consist of a LSTM layer with 2 hidden units, a dropout layer with a 0.5 rate to prevent overfitting and two dense layers. The last output layer is a dense
-layer with softmax activation with 2 units representing the different activities.
-Categorical cross entropy is used as the loss function during batch gradient
-descent and Adam with a learning rate of 0.001, is used as the optimizer.
+& \textit{LSTM} --- An RNN with LSTM cells was also implemented. The simple recurrent layer is substituted with a hidden LSTM layer with 2 hidden units accordingly representing the outputs of the network. Other layers remain identical with the \textit{Simple RNN} classifier.
 
 \end{easylist}
 
+\begin{figure}[htb]
+  \centering
+    \includegraphics[width=0.7\textwidth,keepaspectratio]
+    {images/classifier/simple-rnn-network-layers}
+    \caption{The neural network design with a simple recurrent layer}
+    \label{simple-rnn-network-layers}
+\end{figure}
+
 \subsection{Classifier Validation}
 
-Validating the correctness of our RNN training requires the usage of some common classifier validation techniques. Firstly, the sample data is split by 0.2 rate between training and testing data in order to test for unbiased results when the model training has stopped. A validation split of 0.33 rate is also used while training the RNN to observe the loss and accuracy of the model, essential to help with hyperparameter tuning. The figure \ref{model-validation-monitoring} demonstrates how the LSTM model accuracy and loss are monitored during epochs in order to detect overfitting or underfitting. Lastly, the training is repeated on 5 unconnected models.
+Validating the correctness of our RNN training requires the usage of some common classifier validation techniques. These techniques are commonly used while training neural networks to avoid overfitting. 
+
+Firstly, the sample data is split by 0.2 rate between training and testing data in order to test for unbiased results when the model training has stopped. A validation split of 0.33 rate is also used while training the RNN to observe the loss and accuracy of the model, essential to help with hyperparameter tuning. Validation set is kept separately from test set so when we optimize our hyperparameters, we can validate our results against the test set. The figure \ref{model-validation-monitoring} demonstrates how the LSTM model accuracy and loss are monitored during epochs in order to detect overfitting or underfitting. When the training and test set accuracies and losses do not diverge too much, we can be more confident that our classifier is generalizing and not just optimizing for the input data \cite{deep-learning-cookbook}.
+
+Lastly, the experiment is repeated on 5 unconnected models. Neural networks sometimes tend to converge to some minima that is not the most optimal (global). By running our experiment on 5 unconnected models, we avoid basing our observations and analysis under the influence of one sub-optimal (local) minima. 
 
 \begin{figure*}
    \centering
@@ -99,8 +120,41 @@ Validating the correctness of our RNN training requires the usage of some common
 
 \subsection{Classifier Training Process}
 
-Due to the small sample data size, the LSTM classifier is trained for 15 epochs with stochastic gradient descent. An early stopping hook is also implemented to monitor for validation loss improvements. No improvements in validation loss commonly indicate that the network has stopped learning and is starting to overfit to the training data. After 3 epochs with no improvements the hook stops the learning process of the neural network. The hyperparameters are empirically selected for the classifier, with the goal to maximize the accuracy while preventing overfitting.
+\subsubsection{Simple RNN} 
 
-\section{Classifier Analysis}
+Due to the small sample data size, the RNN classifier is trained for 5 epochs with stochastic gradient descent. The hyperparameters are empirically selected for the classifier, with the goal to maximize the accuracy while preventing overfitting.
 
-\section{Data Visualization}
+An early stopping hook is also implemented to monitor for validation loss improvements. No improvements in validation loss commonly indicate that the network has stopped learning and is starting to overfit to the training data. After 3 epochs with no improvements the hook stops the learning process of the neural network. 
+
+\begin{figure*}
+    \centering
+\begin{tabular}{c|c}
+    \bfseries Repeat & \bfseries Accuracy (\%) % specify table head
+    \csvreader[head to column names]{simple-rnn-repeats-accuracy.csv}{} % use head of csv as column names
+    {\\\hline\i & \a} % specify your coloumns here
+\end{tabular}
+    \caption{Mean accuracies obtained during each Simple RNN classifier run}
+    \label{simple-rnn-repeats-accuracy}
+\end{figure*}
+
+\section{Classifier Visualization and Analysis}
+
+\subsubsection{Simple RNN} 
+
+The fourth experiment run (table \ref{simple-rnn-repeats-accuracy}) is chosen to dive deeper into the inner workings of the classifier.
+
+TODO: Check whether samples chosen are correctly predicted!
+
+TODO: Add reference to visualization source
+
+TODO: Add flack and backflip neuron visualizations
+
+
+
+
+
+
+
+
+
+
