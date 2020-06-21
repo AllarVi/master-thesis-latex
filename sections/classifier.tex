@@ -141,13 +141,39 @@ An early stopping hook is also implemented to monitor for validation loss improv
 
 \subsubsection{Simple RNN} 
 
-The fourth experiment run (table \ref{simple-rnn-repeats-accuracy}) is chosen to dive deeper into the inner workings of the classifier.
+The fourth experiment run (from table \ref{simple-rnn-repeats-accuracy}) is chosen to dive deeper into the inner workings of the classifier.
 
-TODO: Check whether samples chosen are correctly predicted!
+By configuring the model's RNN layer to return hidden states, it is possible to intercept the output values of this layer and investigate the neuron activations. It is also possible to visualize these activations to better understand what the neurons are learning. The author compares neuron activations of backflips (figure \ref{backflip-neuron-activations-simple-rnn}) and back handsprings (figure \ref{back-handspring-neuron-activations-simple-rnn}). In both figures, the activations are visualized using four horizontal lines. Each horizontal line also consists of three inner lines, where the first represents timestep indices and other two represent activations of two hidden layer neurons. The outer horizontal lines are split by 30 timesteps, which correspond to 0.5 seconds of activity time since the activities are recorded at 60 frames per second.
+
+All samples are 110 timesteps long and the missing values are zero-padded. The chosen samples are also correctly predicted by the model. It is interesting to observe how the first neuron starts to flicker it's activation when it encounters the ending of an activity. From here we can also observe how back handsprings tend to last longer than backflips, easily noticeable from neuron activations. A second observation can be made by noticing that the first neuron seems to activate throughout almost the whole duration of a backflip. 
 
 TODO: Add reference to visualization source
 
-TODO: Add flack and backflip neuron visualizations
+\begin{figure*}
+   \centering
+\begin{tabular}{c}
+\includegraphics[width=\textwidth]{images/classifier/neuron-activations-simple-rnn-model-3/backflip-23-tiit}\\
+\includegraphics[width=\textwidth]{images/classifier/neuron-activations-simple-rnn-model-3/backflip-40-margus}\\
+\includegraphics[width=\textwidth]{images/classifier/neuron-activations-simple-rnn-model-3/backflip-6-rasmus}\\
+%\includegraphics[width=\textwidth]{images/classifier/neuron-activations-simple-rnn-model-3/backflip-64-allar}\\
+%\includegraphics[width=\textwidth]{images/classifier/neuron-activations-simple-rnn-model-3/backflip-66-allar}\\
+\end{tabular}
+    \caption{Simple RNN neuron activations for backflip samples}
+    \label{backflip-neuron-activations-simple-rnn}
+\end{figure*}
+
+\begin{figure*}
+   \centering
+\begin{tabular}{c}
+\includegraphics[width=\textwidth]{images/classifier/neuron-activations-simple-rnn-model-3/flack-19-rasmus}\\
+\includegraphics[width=\textwidth]{images/classifier/neuron-activations-simple-rnn-model-3/flack-31-rasmus}\\
+\includegraphics[width=\textwidth]{images/classifier/neuron-activations-simple-rnn-model-3/flack-55-martin}\\
+%\includegraphics[width=\textwidth]{images/classifier/neuron-activations-simple-rnn-model-3/flack-59-martin}\\
+%\includegraphics[width=\textwidth]{images/classifier/neuron-activations-simple-rnn-model-3/flack-68-rasmus}\\
+\end{tabular}
+    \caption{Simple RNN neuron activations for back handspring samples}
+    \label{back-handspring-neuron-activations-simple-rnn}
+\end{figure*}
 
 
 
