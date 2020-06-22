@@ -87,7 +87,7 @@ Classifier algorithms experimented with in the thesis are:
 \begin{easylist}[itemize]
 
 & \textit{Simple RNN} --- The first classifier (shown in figure \ref{simple-rnn-network-layers}) experimented with is a network model with one simple recurrent layer. The recurrent layer consists of 2 units, chosen accordingly to the amount of outputs the network produces - the movements is either a backflip or a back handspring. A dropout layer with a 0.5 rate to prevent overfitting is added next. An activation layer with rectified linear units follows with a flattening layer to reduce dimensions and finally an output layer with softmax activation is used for representing the different activities. Categorical cross entropy is used as the loss function during stochastic gradient descent with an Adam optimizer with a learning rate of 0.001. 
-& \textit{Hierarchical RNN} --- TODO
+& \textit{Hierarchical RNN} --- The Simple RNN works well for the short duration activities analyzed in this paper, but the downside of using one recurrent layer is observability. By feeding all available dimensions into one recurrent layer, we lose the visibility of what exactly the different units in a neural network learn. A more advanced and deeper neural network (inspired by article \cite{hierarchical-rnn-har}) consists of several recurrent layers, each representing some logical unit. The model used for experimentation in this paper is shown in figure \ref{hierarchical-rnn-network-layers}. Hierarchical RNN uses multiple input units, each representing a human skeleton subsection. In this example, the skeleton is divided into left arm, right arm, trunk, left leg and right leg subsections. In subsequent layers, the recurrent units are fused together and finally neural activations are applied on a fully connected skeleton layer. One of the advantages of this method is that we can now intercept some layer of interest and observe the neuron activations only regarding a subsection of the skeleton.
 & \textit{LSTM} --- An RNN with LSTM cells was also implemented. The simple recurrent layer is substituted with a hidden LSTM layer with 2 hidden units accordingly representing the outputs of the network. Other layers remain identical with the \textit{Simple RNN} classifier.
 
 \end{easylist}
@@ -98,6 +98,14 @@ Classifier algorithms experimented with in the thesis are:
     {images/classifier/simple-rnn-network-layers}
     \caption{The neural network design with a simple recurrent layer}
     \label{simple-rnn-network-layers}
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+    \includegraphics[width=\textwidth,keepaspectratio]
+    {images/classifier/hierarchical-rnn-model-summary}
+    \caption{The neural network design with hierarchical recurrent layers}
+    \label{hierarchical-rnn-network-layers}
 \end{figure}
 
 \subsection{Classifier Validation}
