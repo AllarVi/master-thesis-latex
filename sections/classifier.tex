@@ -66,7 +66,15 @@ The difference of the cited work and current work is the custom dataset construc
 
 \section{Methodology}
 
-To develop neural networks capable of recognizing gymnastics movements, a combination of empirical knowledge with the mathematical theory of artificial neural networks is used as the starting point. The development process starts by training a simple RNN neural network with gymnastics data and analyzing the results. TODO: Why?. An iterative process is used to train, validate, analyze and compare the results of each classifier. The steps followed in the current thesis are represented in figure TODO: add figure.
+To develop neural networks capable of recognizing gymnastics movements, a combination of empirical knowledge with the mathematical theory of artificial neural networks is used as the starting point. The development process starts by training a simple recurrent neural network with gymnastics data and analyzing the results. Simple RNN is chosen primarily for its known property of being able to represent information from context window \cite{DBLP:journals/corr/Lipton15}. RNNs have \textit{long-term memory} in the form of weights, enabling the network to \textit{remember} a gymnastics element represented as a sequence. An iterative process is used to train, validate, analyze and compare the results of each classifier. The steps followed in the current thesis are represented in figure \ref{classifier-tasks}.
+
+\begin{figure}[htb]
+  \centering
+    \includegraphics[width=\textwidth,keepaspectratio]
+    {images/classifier/classifier-tasks}
+    \caption{Tasks completed regarding classifier development in the thesis}
+    \label{classifier-tasks}
+\end{figure}
 
 \subsection{Classifier Prerequisites}
 
