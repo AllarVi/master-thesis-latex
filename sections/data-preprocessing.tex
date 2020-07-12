@@ -98,7 +98,7 @@ One limitation worth mentioning when using the pose estimation technique is the 
 \includegraphics[width=5cm]{images/data-preprocessing/unrec-backflip-part-5}&
 \includegraphics[width=5cm]{images/data-preprocessing/unrec-backflip-part-6}\\
 \end{tabular}
-    \caption{The movement of some body parts for this backflip are unrecognizable}
+    \caption{The movement of some body parts during this backflip sample are unrecognizable}
     \label{example-of-unrecognizable-backflip}
 \end{figure*}
 
@@ -126,8 +126,14 @@ Inspired by data pre-processing methods in \cite{hierarchical-rnn-har}, the auth
     \label{centered-backflip-4-rasmus}
 \end{figure*}
 
+\subsection{Data augmentation}
+
+To train classifiers and validate for generalization, one is required to supply well-balanced and a greater amount of data in order to avoid overfitting neural network models to specific samples. The result of 113 samples obtained through previous data processing strategies is enough for building network architectures, however the amount is not enough to validate the model for overfitting. There are many augmentation strategies applicable to skeleton manipulation \cite{NUNEZ201880}. 
+
+The strategy chosen in this case applies random displacement degrees between local joints of the skeleton. Intuitively, pairs of directly connected keypoints are found, after which a pseudo-random degree between 0 and 15 is generated for each pair. Rotation is then applied for the pair of joints for every frame in the sample. Finally, this augmentation is repeated for 100 times, amplifying the previous 113 samples to a total of 11300 new augmented samples.
+
 \section{Results}
 \label{pre-processing-results}
 
-The final dataset yielded after applying all pre-processing strategies consists of 51 backflip and 62 back handspring samples, totaling to 113 samples. 
+The final dataset yielded after applying all pre-processing strategies consists of 5100 backflip and 6200 back handspring samples, totaling to 11300 samples. The samples are persisted as \textit{csv} files for each frame of each sample.
 

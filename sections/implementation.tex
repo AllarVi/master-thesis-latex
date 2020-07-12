@@ -123,13 +123,13 @@ A single Amazon EC2 instance with the following specifications is launched as th
 
 \begin{easylist}[itemize]
 
-& \textit{Operating system} --- Ubuntu Server 18.04 LTS (HVM), SSD Volume Type.
+& \textit{Operating system} --- Ubuntu Server 18.04 LTS (Hardware-assisted virtualization - HVM).
 
 & \textit{Instance type} --- g4dn.xlarge (- 4 vCPUs, 2.5 GHz, Intel Xeon P-8259L). 
 
-& \textit{Storage} --- 64GB of general purpose SSD. No specific requirements for storage. The amount was chosen primarily to accommodate the augmented dataset used for training.
+& \textit{Storage} --- 64GB of general purpose SSD volume type. No specific requirements for storage. The amount was chosen primarily to accommodate the augmented dataset used for training.
 
-& \textit{GPU information} --- NVIDIA T4 Tensor Core GPU \cite{nvidiat4} is installed on the g4dn.xlarge Amazon instance. Additionally, NVIDIA 450 Linux driver series with CUDA 10.1 was installed for accessing the GPU unit by Tensorflow.
+& \textit{GPU information} --- NVIDIA T4 Tensor Core GPU \cite{nvidiat4} with 16GB of GDDR6 memory is installed on the g4dn.xlarge Amazon instance. Additionally, NVIDIA 450 Linux driver series with CUDA 10.1 was installed for accessing the GPU unit by Tensorflow.
 
 \end{easylist}
 
