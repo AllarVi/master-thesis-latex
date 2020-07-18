@@ -1,0 +1,78 @@
+\section{Visualizing recurrent network activations with time-series skeleton data}
+\label{visualizing-recurrent-network-appendix}
+
+\begin{lstlisting}[language=Python]
+def get_activations(model, example_sample): 
+    n_timesteps, n_features = example_sample.shape[0], example_sample.shape[1]
+    
+    x = np.zeros((1, n_timesteps, n_features))
+    
+    for t, timestep in enumerate(example_sample):
+        for f, feature in enumerate(timestep):
+            x[0, t, f] = example_sample[t][f]
+                
+    output = model.get_layer('simple_rnn_1').output
+    
+    f = K.function([model.input], [output])
+    
+    return f([x])[0][0]
+
+activations = get_activations(example_model, example_sample)
+
+def get_image(img, n_timesteps, img_idx, cell_size=48):
+    img_width = n_timesteps * 25
+    cell_size = int(img_width / n_timesteps)
+    
+    pil_image = PILImage.fromarray(img.astype(np.uint8))
+    
+    resized_pil_image = pil_image.resize((img_width, cell_size))
+    
+    draw = ImageDraw.Draw(resized_pil_image)
+    
+    for n_timestep in range(n_timesteps):
+        text = str((img_idx * 30) + n_timestep)
+        xy = (n_timestep * cell_size, 0)
+        
+        draw.text(xy, text)
+        
+    f = BytesIO()
+    resized_pil_image.save(f, 'png')
+    return Image(data=f.getvalue())
+
+def visualize_neurons(act, cell_size=48):
+    n_neurons = act.shape[1]
+    n_timesteps = act.shape[0]
+    
+    fill_value = 128
+    
+    img = np.full((n_neurons + 1, n_timesteps, 3), fill_value)
+    
+    # add 1 to each value in matrix and then divide by 2
+    scores = (act[:, :].T + 1) / 2
+    
+    img[1:, :, 0] = 255 * (1 - scores)
+    img[1:, :, 1] = 255 * scores
+
+    first_hs_img = img[:, :30, :]
+    second_hs_img = img[:, 30:60, :]
+    third_hs_img = img[:, 60:90, :]
+    fourth_hs_img = img[:, 90:, :]
+    
+    imgs = [first_hs_img,
+            second_hs_img,
+            third_hs_img,
+            fourth_hs_img]
+    
+    actual_imgs = []
+    for i, img in enumerate(imgs):
+        n_img_timesteps = img.shape[1]
+        
+        actual_imgs.append(get_image(img, n_img_timesteps, i))
+    
+    return actual_imgs
+
+example_sample_imgs = visualize_neurons(activations)
+
+for img in example_sample_imgs:
+    display(img)
+\end{lstlisting}
