@@ -2,8 +2,24 @@
 
 \end{comment}
 
-\section{Classifier comparisons}
+\section{Classifiers comparison}
 
+All classifiers presented in this thesis have outstanding results with distinguishing the two gymnastics elements - backflip and back handspring. The results show impressive potential distinguishing short duration complex body moments. It is worth to mention that the time-series input data also contains full rotation of human body, separating this work from other example works using recurrent neural networks to recognize simple human actions \cite{sawant2020human}. Backflips and back handsprings are similar actions in terms of human body movement, differentiating mostly in the way that during the backflip's rotation athlete's arms are not extended and also noticeable vertical movement occurs during the back handspring push off phase (section \ref{back-handspring-description-section}). The table \ref{classifier-wall-time} depicts all classifiers with corresponding average test accuracy for 5 unrelated model training runs. The table also contains total wall time for all classifiers with noticeable difference in the duration, clearly demonstrating how more complex neural network architectures require more computational power. 
+
+With the dataset used for experimentation, the classifiers tend to be sensitive to overfitting, requiring heuristic hyperparameter tuning. The author's training process involved training the classifiers to overfit at first runs and using hyperparameter tuning with callbacks size to finish training before reaching 100\% accuracy. With a training set of 1514 samples, all recurrent classifiers finish at sub-hundred percent accuracy, enabling the comparison of classifier accuracy ratios.
+
+With equal sample sizes and training epochs, the hierarchical RNN finishes with the highest average accuracy of 99.909\%, however requiring four times as much training time as the \textit{SimpleRNN} classifier, with no substantial loss of average accuracy. The hierarchical RNN provides more interpret-ability with body part specific neuron activations. In summary, experimental results show positive potential using recurrent network architectures for differentiating gymnastics movements, such as backflips and back handsprings. 
+
+\begin{table}[htb]
+\begin{tabular}{llll}
+Classifier            & SimpleRnn & LSTM      & Hierarchical RNN  \\
+Average test accuracy & 94.467\%  & 88.405\%  &  99.909\%         \\
+Wall time             & 13min 4s  & 30min 34s & 1h 1min 38s       \\
+ &  &  &  
+\end{tabular}
+\caption{More complex classifier architecture strongly impacts wall time when training recurrent neural networks to distinguish gymnastics elements}
+\label{classifier-wall-time}
+\end{table}
 
 
 

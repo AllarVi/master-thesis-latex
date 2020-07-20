@@ -19,13 +19,20 @@
 
 \end{comment}
 
+The main purpose of this thesis was to give an overview of a full end-to-end solution of combining recent advancements in pose estimation with human action recognition in the sports of gymnastics. To the best of authors knowledge, these is not much literature demonstrating such solutions for gymnastics action recognition. Most previous solutions capturing gymnastics actions use restricting devices or garment. Restricting solutions have not found use in everyday training sessions with complex biomechanical movements, such as in the sports of gymnastics. The main requirements set by author were completed. These included using a consumer-grade action camera (\textit{GoPro Hero 7}) to capture back handsprings and backflips in regular gymnastics training sessions, with no additional equipment. The author demonstrates how open sourced pose estimation tool \textit{OpenPose} could be used as a viable option for capturing the movements. Finally, classifiers with recurrent network architecture were developed and integrated with skeleton based time-series data as an input. As the author himself is a regular practitioner of this sport, the motivation for experimenting with non-invasive and accessible technology clearly exists. 
 
-% We conducted full and detailed analysis of patterns drawn Luria's alternating series test. Dta
+Although, an end-to-end solution is described in this paper, there is much room for improvements to bring this solution into everyday use by athletes. It should also be noted, that most of the computational work was done in cloud computing environment with professional tier graphical processing units. Prior to field testing this solution, the data pre-processing strategies developed and used in this thesis also require optimization. The data pre-processing strategies were needed to balance for the shortcomings of \textit{OpenPose}. The constructed dataset should also be extended with more relevant actions and angles of samples for better reusability.
 
-% All goals of the 
+More contribution was made in terms of developing classifier architectures fit for training with time-series data in the human skeleton form obtained from pose estimation. This thesis also includes demonstration of neuron activations usable with time-series data, uncommon in relevant literature processed by the author. 
 
-% Full and detailed analysis of the patterns was implemented and is complex multilevel process. Novel clustering solution was proposed, 
-% anomaly detection concept was derived from clustering,  
-% We achieved goals: novel clustering algorithm 
+Advancements in accessible and non-invasive pose estimation and human action recognition could bring the technology closer to be used for feedback in live sports events, automated training session documentations and relevant metrics acquisition from distance.
 
-% Primary achievement of thesis --- classifier with 91\% accuracy, which makes it relatively high among present literature.
+
+
+
+
+
+
+
+
+
