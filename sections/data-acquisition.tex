@@ -24,12 +24,12 @@ The data to be explored and used to train machine learning models in this thesis
 
 The data acquisition chapter is split into two parts. The first part (\ref{recording-human-actions}) explains what kind and how much of data the author is collecting and the process behind it. The second part (\ref{estimating-and-collecting-human-action-poses}) explains a more technical approach on how the initial data for the human activity recognition algorithm is acquired from recorded human motions and the tools used to do so.
 
-\section{Recording Human Actions}
+\section{Recording gymnastics activities}
 \label{recording-human-actions}
 
 \subsection{Choosing Activities To Record}
 
-When it comes to choosing difficult biomechanical activities performed by humans, gymnastics is one on the top of the list. Gymnastic feats don't require any additional equipment by humans, but at the same time physical strength, flexibility and kinesthetic awareness are a must to perform any of the skills demonstrated by elite athletes. Gymnastics is also special in its indisputable need for utilizing every part of the human body. All major muscle groups of an athlete need to be in superior condition to perform certain rotations, jumps and holds. As age is a limiting factor when it comes to peak physical condition, many athletes start their career at a very young age. However, there is no age limit for practicing gymnastics at a recreational level.
+When it comes to choosing challenging biomechanical activities performed by humans, gymnastics is one on the top of the list. Floor gymnastics exercises, in particular, don't require any additional equipment by humans. Still, at the same time, physical strength, flexibility, and kinesthetic awareness are a must to perform any of the skills presented by elite athletes. The athlete's physical requirements are evaluated by versatile fitness level evaluation tools developed for gymnastics \cite{sleeper2012measuring}. Gymnastics is also unique in its indisputable need for utilizing every part of the human body. All major muscle groups of an athlete need to be in superior condition to perform specific rotations, jumps, and holds. As age is a limiting factor in peak physical condition, many athletes start their careers at a very young age \cite{artistic-vs-rhythmic-young-girls}. However, there is no age limit for practicing gymnastics at a recreational level.
 
 Working with gymnastic movements and trying to automate the recognition of this kind of human activity requires a reference or in machine learning terms \textit{training data} to train our machine. The two activities chosen to prove the hypothesis of this paper are known as backflips and back handsprings. While fast and explosive, these activities are similar in their execution and achievable by all levels of gymnastics trainees. As backflips and back handsprings are the building blocks of more complex gymnastic combinations, perfecting the technique of these activities provides athletes with the confidence and skill necessary to move on to more difficult feats. From the need for perfecting the technique of these basic activities comes the motivation to analyze them and automate the feedback loop for the athletes. From the athlete's perspective, it is faster and cheaper to get the feedback from, for example, a portable device with recording capabilities, rather than a gymnastics coach. From the coach's perspective, it is also more convenient to automate the learning process of easier activities so the coach can concentrate on guiding athletes towards more interesting and challenging exercises. Figures \ref{example-of-backflip} and \ref{example-of-back-handspring} will provide the reader a visual idea of how backflips and back handsprings are performed respectively. 
 
@@ -118,7 +118,7 @@ Each activity is recorded as one still view from eye level fully showing the sub
 
 The results of the recording process amounts to a total of 96 backflips and 84 back handsprings captured.
 
-\section{Estimating and Extracting Human Action Poses}
+\section{Estimating and extracting gymnastics \\ activities}
 \label{estimating-and-collecting-human-action-poses}
 
 The second section of this chapter focuses on the process of extracting human skeleton data from raw video files captured in the first section of this chapter. The skeleton data will be later preprocessed and used to train machine learning algorithms to recognize gymnastic activities.
