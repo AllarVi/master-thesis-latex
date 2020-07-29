@@ -1,66 +1,21 @@
 \section{Problem statement}
 
-For a machine to potentially help athletes some day to improve their technique, the machine needs to first be able to recognize and differentiate between different gymnastics movements. Even before recognition, the movements need to be digitally recorded. With the advance of consumer grade recording devices, such as smart phones and action cameras, the recording of gymnastics training sessions has become an everyday thing. Both athletes and coaches can look at the recordings and give valuable feedback necessary for the athletes progression. This thesis examines the data needed for capturing complex biomechanical movements without being invasive towards the athletes and the author also explores the options for recognizing gymnastics movements on the basis of recent popularity of deep learning in the human action recognition (HAR) field.
-
-Recording human actions can be broadly classified into two categories: (a) \textbf{optical methods} --- for example the \textit{marker-based} systems used in entertainment, but also newer \textit{marker-less} and \textit{deep learning} based systems \cite{Elhayek_2015_CVPR} and (b) \textit{non-optical methods} --- both single, such
-as accelerometers or gyroscopes and also complex unit sensing devices, such as inertial/magnetic measurements units \cite{7567551}. Here the author narrows the solutions down to optical methods, excluding non-optical methods in regards to the context of gymnastics. The decision is based on the author's initiated requirement, that the solution needs to be practically usable. For gymnastics, the freedom of movement is crucial, since many of the foundational movements (i.e. round-offs - the movement athletes use to transform horizontal velocity to vertical velocity) require multiple meters of free space and no restricting devices on the body.
-
-These restrictions rule out wired, movement-restricting and additional weight requiring non-optical sensors. Furthermore, special equipment requiring optical marker-based systems have to be ruled out also. For example, in the article \cite{Burgess2001KINEMATICAO}, a research was conducted for comparing the technique of beginner and advanced athletes. While a very interesting study, the markers were attached only to one side of the athletes body. This ignores the discrepancies of body sides and complicates the repeatability of the experiment for everyday use. In the current paper, the author initiates another requirement, assuming that the gymnastics athletes are not interested in wearing special equipment for the everyday training sessions.
-
-The third requirement the author addresses is the need for an interactive, easily usable and understandable software for coaches and athletes to analyze their trainings. The need for such software is expressed in article \cite{doi:10.1080/14763140608522878}, emphasizing on the ease of usability and allowance of individual input. While giving athletes the feedback for improving their technique is not in the scope of this thesis, the author still makes an effort to visualize and interpret the recognition of decisions made by deep learning classifiers.
-
-The following list depicts the summarization of the problem statement:
+The following list depicts the sub-problems of the problem statement:
 
 \begin{easylist}[itemize]
 
-    & \textit{Acquiring and exploring relevant data} --- As mentioned previously, restricting factors of complex gymnastics movements require the investigation of relevant and obtainable data. Many already developed motion capture solutions are not applicable to everyday sports environment. 
+    & \textit{Acquiring and exploring relevant data} --- This thesis examines the data needed for capturing complex biomechanical movements without being invasive towards the athletes. From the author's own experience in practicing gymnastics, many already developed restricting motion capture solutions do not apply to the everyday sports environment. 
+
+    Recording human actions can be broadly classified into two categories: (a) \textbf{optical methods} --- for example the \textit{marker-based} systems used in entertainment, but also newer \textit{marker-less} and \textit{deep learning} based systems \cite{Elhayek_2015_CVPR} and (b) \textit{non-optical methods} --- both single, such as accelerometers or gyroscopes and also complex unit sensing devices, such as inertial/magnetic measurements units \cite{7567551}. Here the author narrows the solutions down to optical methods, excluding non-optical methods regarding the context of gymnastics. For gymnastics, the freedom of movement is crucial, since many of the foundational movements (i.e., round-offs - the movement athletes use to transform horizontal velocity to vertical velocity) require multiple meters of free space and no restricting devices on the body.
+
+    These restrictions rule out wired, movement-restricting, and additional weight requiring non-optical sensors. Furthermore, we also rule out special equipment requiring optical marker-based systems. For example, in the article \cite{Burgess2001KINEMATICAO}, research was conducted for comparing the technique of beginner and advanced athletes. While a fascinating study, the markers were attached only to one side of the athlete's body, ignoring the discrepancies of body sides and complicating the experiment's repeatability for everyday use. The author initiates another requirement in the current paper, assuming that the gymnastics athletes are not interested in wearing special equipment for the daily training sessions.
+
+    The author uses a consumer-grade action camera to capture individual athletes' backflips and back handsprings in regular gymnastics facilities, explained in more detail in section \ref{recording-human-actions}.
     
-    & \textit{Pose estimation as a viable option for gymnastics movements} --- The author experiments and develops strategies for acquiring, processing and augmenting data obtained by newer \textit{pose estimation} software (\textit{OpenPose}). A generalized and reusable dataset is constructed for experimenting and developing classifiers capable of differentiating gymnastics movements.
+    & \textit{Pose estimation as a viable option for gymnastics movements} --- The author experiments and develops strategies for acquiring, processing, and augmenting data obtained by newer \textit{pose estimation} software (\textit{OpenPose}). We construct a generalized and reusable dataset for experimenting and developing classifiers capable of differentiating gymnastics movements. Further explanation on the pose estimation process is available in section \ref{pose-estimation-process-and-results}.
     
-    & \textit{Human action recognizing classifier development} --- Advances in deep learning accessibility inspire the author to explore human action recognition in the context of gymnastics. Previously constructed dataset is used in conjunction with deep learning network design to develop classifiers capable of differentiating between gymnastics movements. Cloud-based training environment description is added to give details of a fully prototyped end-to-end solution.
+    & \textit{Human action recognizing classifier development} --- Advances in deep learning accessibility inspire the author to explore human action recognition in the context of gymnastics. We use a previously constructed dataset in conjunction with deep learning network design to develop classifiers capable of differentiating between gymnastics movements. The author also adds a cloud-based training environment description to give details of a fully prototyped end-to-end solution, section \ref{classifier-development}.
+
+    & \textit{Visualizing classifier decisions} --- The need for an interactive, easily usable, and understandable software for coaches and athletes to analyze their training sessions is expressed in the article \cite{doi:10.1080/14763140608522878}, emphasizing the ease of usability and allowance of individual input. While giving athletes the feedback for improving their technique is not in the scope of this thesis, the author still makes an effort to visualize and interpret the decisions of the recognitions made by deep learning classifiers in section \ref{classifier-visualization}.
 
 \end{easylist}
-
-\begin{comment}
-
-    With respect to all previously mentioned aspects, it is possible to define scope of the problem current thesis addresses: complete and detailed analysis of patterns drawn during Luria’s alternating series tests, extract interpretable feature set and develop machine learning model, capable of correct differentiation between groups of healthy controls and Parkinson’s disease patients.
-    
-    
-    
-    
-    
-    Present thesis offers solution to aforementioned problems. 
-    
-    Primary goal of present thesis is to conduct detailed analysis of patterns drawn during Luria’s alternating series tests, extract interpretable feature set and develop machine learning model, capable of correct differentiation between groups of healthy controls and Parkinson’s disease patients.
-    
-    Main objective of current thesis is to introduce human-understandable novel anomaly-type features for "Luria’s alternating series tests", build machine learning model capable of accurate differentiation between Parkinson's disease patients and also method providing traceability of each individual prediction by applying LIME algorithm \cite{ribeiro2016should}, which should transform untrustworthy classification model into a trustworthy one.
-    
-    We will combine different ML models to filter outliers, split raw data into meaningful clusters using computer vision algorithms, analyze and extract features of each cluster to detect drawing mistakes, build composite classification models using random forest and neural networks and finally will interpret each individual prediction while following main steps:
-    
-    % The main gap with current approaches, is what they cannot give any understandable feedback to medical personnel. It is surely possible to create binary classifier with numeric feature set. For example we can use random forest or neural network to complete such task. The model will detect unhealthy individuals with some acceptable precision rate. However, we cannot clearly evaluate such "black box" models because of their hidden structure.
-    
-    % Despite widespread adoption, machine learning models remain mostly black boxes. Understanding the reasons behind predictions is, however, quite important in assessing trust, which is fundamental if one plans to take action based on a prediction, or when choosing whether to deploy a new model. Such understanding also provides insights into the model, which can be used to transform an untrustworthy model or prediction into a trustworthy one.
-    
-    
-    \begin{easylist}[itemize]
-    
-    % & \textbf{Acquiring dataset} - drawings of PD patients and controls from previous research is available, also iOS application for iPad Pro is in active development stage. Recording session in local hospitals are scheduled in nearest future.
-    
-    % & \textbf{Pre-processing data} - Recorded dataset from iPad tablet consists of $x$, $y$ coordinates, pressure $p$, azimuth and altitude angles of the pencil and time stamp $t$. Coordinate units $x$, $y$ and pressure $p$ are device-specific and don't give adequate characteristics of the drawing, therefore we need to convert all data records to physical units. Removing outliers, data noise along with obvious faulty input will be filtered \cite{lee2008trajectory}.
-    
-    % & \textbf{Defining scope of mistakes} - there is a wide range of possibilities, and we should choose certain mistake types to implement. Potential set of mistakes will be: Geometry distortion-type drawing mistakes, skewness of drawing/segment, decline/increase in the amplitude of pattern, angle of upper and lower boundaries of the drawing/segment, rotation distortion, completeness of drawing/segment, anomalies in time series.
-    
-    % & \textbf{Building of the models}
-    % && During implementation of geometry distortion-type mistakes detection algorithm, common trigonometry rules and Euclidean distances would be used, along with common techniques of clustering such as $K$-means, density-based scanning and hierarchical clustering. Some concepts and inspiration would be taken from relevant research paper \cite{hammond2011recognizing}.
-    
-    % && During implementation of computed kinematic-based and pressure-based mistakes detection model, similar algorithm described in research paper \cite{nomm2016recognition}, would be reproduced and improved. Model would base on combination of popular ML algorithms, such as $K$-means clustering, $k$-nearest neighbors and random forest RF.
-    
-    & \textbf{Assessment of statistical significance} - following question will be answered: do generated features provide statistically significant differentiation between groups of healthy individuals and Parkinson's disease patients?
-    
-    & \textbf{Composite model building and validation} - complex decision making Machine Learning algorithm will be developed based on all possible and acquired mistake-type features, kinematic and pressure parameters. To overcome and even benefit from high dimensionality training data, \textit{XGBoost  Scalable Tree Boosting} \cite{chen2016xgboost} algorithm will be applied during model building process.
-    
-    & \textbf{Interpretation of the models} - "Local Interpretable Model-Agnostic Explanations" LIME algorithm \cite{ribeiro2016should} will be used to describe each individual prediction and SP-LIME algorithm will be applied, revealing hidden relations between features inside our classifier.
-    
-    \end{easylist}
-
-\end{comment}

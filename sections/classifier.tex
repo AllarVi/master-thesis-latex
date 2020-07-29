@@ -1,64 +1,3 @@
-\begin{comment}
-
-
-% \begin{figure}
-%   \makebox[\textwidth][c]{
-%   \includegraphics[width=1.7\textwidth]{images/classifier/001}}%
-%   \caption{Caption}
-%   \label{fig:key}
-% \end{figure}
-
-
-% Our aim was to build a discriminative model to differentiate between people with PD and HC. It is a binary classification task that can be resolved by statistical machine learning algorithms.
-
-% The underlying idea of SVM classifiers is to calculate a maximal margin hyperplane separating two classes of the data. To learn non-linearly separable functions, the data are implicitly mapped to a higher dimensional space by means of a kernel function, where a separating hyperplane is found. New samples are classified according to the side of the hyperplane they belong to. 
-
-% Decision Trees (DTs) are a non-parametric supervised learning method used for classification and regression. Decision trees learn from data to approximate a sine curve with a set of if-then-else decision rules. The deeper the tree, the more complex the decision rules and the fitter the model.
-
-% Decision tree builds classification or regression models in the form of a tree structure. It breaks down a data set into smaller and smaller subsets while at the same time an associated decision tree is incrementally developed. The final result is a tree with decision nodes and leaf nodes. A decision node has two or more branches. Leaf node represents a classification or decision. The topmost decision node in a tree which corresponds to the best predictor called root node. Decision trees can handle both categorical and numerical data.
-
-% each capable of producing a response when presented with a set of predictor values. For classification problems, this response takes the form of a class membership classifies, a set of independent predictor values with one of the categories present in the dependent variable.
-
-% The essence of the technique is to construct multiple decision trees in randomly selected feature sub-space and use averaging to improve the predictive accuracy and control over-fitting. Using tree ensembles can lead to significant improvement in prediction accuracy (i.e., better ability to predict new data cases).
-
-% Random forests or random decision forests are an ensemble learning method for classification, regression and other tasks, that operate by constructing a multitude of decision trees at training time and outputting the class that is the mode of the classes (classification) or mean prediction (regression) of the individual trees
-
-% AdaBoost, short for Adaptive Boosting, is a machine learning meta-algorithm formulated by Yoav Freund and Robert Schapire, who won the 2003 Gödel Prize for their work. It can be used in conjunction with many other types of learning algorithms to improve performance. The output of the other learning algorithms ('weak learners') is combined into a weighted sum that represents the final output of the boosted classifier. AdaBoost is adaptive in the sense that subsequent weak learners are tweaked in favor of those instances misclassified by previous classifiers. AdaBoost is sensitive to noisy data and outliers. In some problems it can be less susceptible to the overfitting problem than other learning algorithms. The individual learners can be weak, but as long as the performance of each one is slightly better than random guessing, the final model can be proven to converge to a strong learner.
-
-% AdaBoost is one of the important ensemble methods known as boosting. The key idea behind boosting techniques is to use ensemble methods to combine weak classifiers in order to build a strong learner. AdaBoost is an iterative boosting algorithm constructing a strong classifier as a linear combination of weak classifiers, each performing at least above chance level (50 correct classification). 
-
-% We used decision trees classifiers as weak classifiers. The maximum number of estimators at which boosting is terminated was set to 500. Settings used for decision trees were as follows. The number of features to consider when looking for the best split was the square root of the number of features and the maximum depth of the tree was set to 3.
-
-% Classifier validation was conducted using stratified 10-fold cross-validation. The data was divided into ten mutually exclusive and exhaustive equal-sized subsets. For each subset, the union of all other subsets was considered as training data and the error rate was determined. Errors over different subsets were averaged to obtain the classification error. The process was repeated a total of ten times; the original dataset was randomly permuted in each repetition prior to splitting into training and testing subsets. The results were averaged over all ten runs.
-% The classification test performance was determined by the classification accuracy Pacc, sensitivity Psen and specificity Pspe.
-
-% From all computed features we kept only those that passed the Mann–Whitney U test, i.e. those that showed a statistically significant (p < 0.05) difference between the PD and control groups. Table 3 shows 20 most relevant features and median of their values for PD and healthy control group. Features are sorted according Spearman’s correlation coefficient 
-% The highest classification accuracy using pressure features Pacc = 74.2\% was obtained for data from the task 6
-
-to apply 3-fold cross-validation, more specific This cross-validation object is a variation of KFold that returns stratified folds. The folds are made by preserving the percentage of samples for each class.
-
-Stratified K-Folds cross-validator
-
-Provides train/test indices to split data in train/test sets.
-This cross-validation object is a variation of KFold that returns stratified folds. The folds are made by preserving the percentage of samples for each class.
-
-StratifiedKFold implementation of $Scikit-learn$
-
-% Classifier validation was conducted using stratified 10-fold cross-validation. The data was divided into ten mutually exclusive and exhaustive equal-sized subsets. For each subset, the union of all other subsets was considered as training data and the error rate was determined. Errors over different subsets were averaged to obtain the classification error. The process was repeated a total of ten times; the original dataset was randomly permuted in each repetition prior to splitting into training and testing subsets. The results were averaged over all ten runs.
-
-% The classification test performance was determined by the classification accuracy Pacc, sensitivity Psen and specificity Pspe.
-% From all computed features we kept only those that passed the Mann–Whitney U test, i.e. those that showed a statistically significant (p < 0.05) difference between the PD and control groups. Table 3 shows 20 most relevant features and median of their val- ues for PD and healthy control group. Features are sorted according Spearman’s correlation coefficient.
-
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-
-% One round of cross-validation involves partitioning a sample of data into complementary subsets, performing the analysis on one subset (called the training set), and validating the analysis on the other subset (called the validation set or testing set). To reduce variability, in most methods multiple rounds of cross-validation are performed using different partitions, and the validation results are combined (e.g. averaged) over the rounds to estimate a final predictive model.
-
-% One of the main reasons for using cross-validation instead of using the conventional validation (e.g. partitioning the data set into two sets of 70\% for training and 30% for test) is that there is not enough data available to partition it into separate training and test sets without losing significant modelling or testing capability. In these cases, a fair way to properly estimate model prediction performance is to use cross-validation as a powerful general technique.[5]
-
-
-
-\end{comment}
-
 As demonstrated in a recent research by Farzan Majeed Noori,
 Benedikte Wallace, Md. Zia Uddin and Jim Torresen in \cite{10.1007/978-3-030-20205-7_25}, a combined architecture of using OpenPose for pose estimation and Recurrent Neural Networks (RNN) for human activity recognition could prove as the new state-of-the-art solution for robust and non-intrusive human activity recognition. In the cited research, OpenPose was used to extract keypoints from a subset of the Berkeley Multimodal Human Action Database (BMHAD) \cite{Berkeley-MHAD}. What makes it remarkable, is the classification accuracy obtained using a Recurrent Neural Network with Long Short-term Memory (LSTM) cells over more conventional machine learning classifiers, such as Support Vector Machines, Decision Trees and Random Forests. Since the dataset contained human activities recorded from different angles, the solution is also view-invariant, which also increases the robustness of this solution. Another paper, a technical report by Chinmay Sawant \cite{sawant2020human}, also supports the combination of OpenPose with LSTMs for time-series classification, reporting similar accuracy results in real-time application on the same BMHAD dataset, making use of the efficiency of this solution.
 
@@ -155,6 +94,7 @@ An early stopping hook (callback) is also implemented to monitor for validation 
 \end{figure*}
 
 \section{Classifier Visualization and Analysis}
+\label{classifier-visualization}
 
 \subsubsection{Simple RNN} 
 
