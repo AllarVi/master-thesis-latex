@@ -81,7 +81,30 @@ Validating the learning process of our neural networks requires the usage of som
 \subsection{Classifier Training Process}
 \label{classifier-training-process}
 
-\subsubsection{Simple RNN} 
+\subsubsection{SimpleRNN training process} 
+
+\begin{figure*}
+   \centering
+\begin{tabular}{cc}
+\includegraphics[width=6.5cm]{images/classifier/model-output-simple-rnn-339/model-1-train-vs-validation-accuracy}&
+\includegraphics[width=6.5cm]{images/classifier/model-output-simple-rnn-339/model-1-train-vs-validation-loss}\\
+
+\includegraphics[width=6.5cm]{images/classifier/model-output-simple-rnn-339/model-2-train-vs-validation-accuracy}&
+\includegraphics[width=6.5cm]{images/classifier/model-output-simple-rnn-339/model-2-train-vs-validation-loss}\\
+
+\includegraphics[width=6.5cm]{images/classifier/model-output-simple-rnn-339/model-3-train-vs-validation-accuracy}&
+\includegraphics[width=6.5cm]{images/classifier/model-output-simple-rnn-339/model-3-train-vs-validation-loss}\\
+
+\includegraphics[width=6.5cm]{images/classifier/model-output-simple-rnn-339/model-4-train-vs-validation-accuracy}&
+\includegraphics[width=6.5cm]{images/classifier/model-output-simple-rnn-339/model-4-train-vs-validation-loss}\\
+
+\includegraphics[width=6.5cm]{images/classifier/model-output-simple-rnn-339/model-5-train-vs-validation-accuracy}&
+\includegraphics[width=6.5cm]{images/classifier/model-output-simple-rnn-339/model-5-train-vs-validation-loss}\\
+
+\end{tabular}
+    \caption{Training and validation accuracies with losses for SimpleRNN}
+    \label{simple-rnn-acc-loss}
+\end{figure*}
 
 Due to the small sample data size, the RNN classifier is trained for 5 epochs with stochastic gradient descent. The hyperparameters are empirically selected for the classifier, with the goal to maximize the accuracy while preventing overfitting.
 
