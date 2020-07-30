@@ -57,11 +57,17 @@ Classifier algorithms experimented with in the thesis are:
 
 \subsection{Classifier Validation}
 
-Validating the correctness of our RNN training requires the usage of some common classifier validation techniques. These techniques are commonly used while training neural networks to avoid overfitting. 
+Validating the learning process of our neural networks requires the usage of some standard classifier validation techniques. First, we list these validation methods for reference and then explain each one more thoroughly: 
 
-Firstly, the sample data is split by 0.2 rate between training and testing data in order to test for unbiased results when the model training has stopped. A validation split of 0.33 rate is also used while training the RNN to observe the loss and accuracy of the model, essential to help with hyperparameter tuning. Validation set is kept separately from test set so when we optimize our hyperparameters, we can validate our results against the test set. The figure \ref{model-validation-monitoring} demonstrates how the LSTM model accuracy and loss are monitored during epochs in order to detect overfitting or underfitting. When the training and test set accuracies and losses do not diverge too much, we can be more confident that our classifier is generalizing and not just optimizing for the input data \cite{deep-learning-cookbook}.
+\begin{easylist}[itemize]
 
-Lastly, the experiment is repeated on 5 unconnected models. Neural networks sometimes tend to converge to some minima that is not the most optimal (global). By running our experiment on 5 unconnected models, we avoid basing our observations and analysis under the influence of one sub-optimal (local) minima. 
+& \textit{Test split} --- 0.2 rates split the sample data between training and testing data to test for unbiased results when the model training has stopped.
+& \textit{Validation split} --- A validation split of 0.33 rate is also used while training the RNN to observe the model's loss and accuracy, essential to help with hyperparameter tuning. The validation set is kept separately from the test set, so when we optimize our hyperparameters, we can validate our results against the test set.
+& \textit{Monitoring accuracy and loss} --- Figure \ref{model-validation-monitoring} demonstrates how the LSTM model accuracy and loss are monitored during epochs to detect overfitting or underfitting. When the training and test set accuracies and losses do not diverge too much, we can be more confident that our classifier is generalizing and not just optimizing for the input data \cite{deep-learning-cookbook}.
+& \textit{Repeated training on unconnected models} --- We repeat each classifier training on five unconnected models. As stated in \cite{bianchini1994problem}, the optimization of a cost function in recurrent neural networks can potentially lead some minima that are not the most optimal (global). By running our experiment on five unconnected models, we avoid basing our observations and analysis under the influence of one sub-optimal (local) minima.
+& \textit{Recurrent neural network regularization} --- As we train a deep neural network on a small training set, we experience what is known as the "overfitting" phenomenon, observed when training the classifiers, and achieving a test accuracy of 100\%. In our case, this happens due to repeated training on a small dataset with little variance. We add dropout layers to randomly omit half of the feature detectors on each training case \cite{hinton2012improving}.
+
+\end{easylist}
 
 \begin{figure*}
    \centering
