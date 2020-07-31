@@ -102,37 +102,37 @@ Validating the learning process of our neural networks requires the usage of som
 \includegraphics[width=6.5cm]{images/classifier/model-output-simple-rnn-339/model-5-train-vs-validation-loss}\\
 
 \end{tabular}
-    \caption{Training and validation accuracies with losses for SimpleRNN}
+    \caption{Comparison of training and validation accuracies/losses for SimpleRNN}
     \label{simple-rnn-acc-loss}
 \end{figure*}
 
 Due to the small sample data size, the RNN classifier is trained for 5 epochs with stochastic gradient descent. The hyperparameters are empirically selected for the classifier, with the goal to maximize the accuracy while preventing overfitting.
 
-An early stopping hook (callback) is also implemented to monitor for validation loss improvements. No improvements in validation loss commonly indicate that the network has stopped learning and is starting to overfit to the training data. After 3 epochs with no improvements the hook stops the learning process of the neural network. 
+An early stopping hook (callback) is also implemented to monitor for validation loss improvements. No improvements in validation loss commonly indicate that the network has stopped learning and is starting to overfit to the training data \cite{deep-learning-cookbook}. After three epochs with no improvements, the hook stops the learning process of the neural network. We adjust recurrent layer units, dropout, the training set size, and epochs until all five models finish training without being interrupted by the callback hook. All five models are depicted in figure \ref{simple-rnn-acc-loss}.
 
 \begin{figure*}
     \centering
-\begin{tabular}{c|c}
-    \bfseries Repeat & \bfseries Accuracy (\%) % specify table head
+\begin{tabular}{c|c|c|c|c|c}
+    \bfseries Classifier & \bfseries Model 1 & \bfseries Model 2 & \bfseries Model 3 & \bfseries Model 4 & \bfseries Model 5 % specify table head
     \csvreader[head to column names]{simple-rnn-repeats-accuracy.csv}{} % use head of csv as column names
-    {\\\hline\i & \a} % specify your coloumns here
+    {\\\hline\m & \a & \b & \c & \d & \e} % specify your coloumns here
 \end{tabular}
-    \caption{Mean accuracies obtained during each Simple RNN classifier run}
+    \caption{Test accuracies obtained during each classifier run}
     \label{simple-rnn-repeats-accuracy}
 \end{figure*}
 
-\section{Classifier Visualization and Analysis}
+\section{Classifier Visualization and\\ Analysis}
 \label{classifier-visualization}
 
 \subsubsection{Simple RNN} 
 
-The fourth experiment run (from table \ref{simple-rnn-repeats-accuracy}) is chosen to dive deeper into the inner workings of the classifier.
+We choose the fourth experiment run (from table \ref{simple-rnn-repeats-accuracy}) to dive deeper into the classifier's inner workings.
 
-By configuring the model's RNN layer to return hidden states, it is possible to intercept the output values of this layer and investigate the neuron activations. It is also possible to visualize these activations to better understand what the neurons are learning. The neuron visualization code is based on the code found in \textit{Deep Learning Cookbook} by Douwe Osinga \cite{deep-learning-cookbook}, but with a major difference in the data being used as the input for the recurrent network. In section \textit{5.5 Visualizing Recurrent Network Activations}, Douwe Osinga uses a bitmap to visualize a \textbf{text sequence} being provided to the network and intercepting the activations of a specific layer. However, the current work uses \textbf{time-series data} representing skeleton keypoints location for each frame of a gymnastics activity. This requires some modifications to the visualization code provided in the book. The modified code snippet is added as an appendix (\ref{visualizing-recurrent-network-appendix}) to this thesis, as to the best of author's knowledge, there are not many examples of recurrent neural network neuron activation visualization code for time-series skeleton data available.
+By configuring the model's RNN layer to return hidden states, it is possible to intercept this layer's output values and investigate the neuron activations. It is also possible to visualize these activations to understand better what the neurons are learning. The neuron visualization code is based on the code found in \textit{Deep Learning Cookbook} by Douwe Osinga \cite{deep-learning-cookbook}, but with a significant difference in the data being used as the input for the recurrent network. In section \textit{5.5 Visualizing Recurrent Network Activations}, Douwe Osinga uses a bitmap to visualize a \textbf{text sequence} being provided to the network and intercepting the activations of a specific layer. However, the current work uses \textbf{time-series data} representing the skeleton keypoints location for each frame of a gymnastics activity. This requires some modifications to the visualization code provided in the book. The modified code snippet is added as an appendix (\ref{visualizing-recurrent-network-appendix}) to this thesis, as to the best of the author's knowledge, there are not many examples of recurrent neural network's neuron activation visualization code for time-series skeleton data available.
 
-The author of this work compares neuron activations of backflips (figure \ref{backflip-neuron-activations-simple-rnn}) and back handsprings (figure \ref{back-handspring-neuron-activations-simple-rnn}). In both figures, the activations are visualized using four horizontal lines. Each horizontal line also consists of three inner lines, where the first represents timestep indices and other two represent activations of two hidden layer neurons. The outer horizontal lines are split by 30 timesteps, which correspond to 0.5 seconds of activity time since the activities are recorded at 60 frames per second.
+The author of this work compares neuron activations of backflips (figure \ref{backflip-neuron-activations-simple-rnn}) and back handsprings (figure \ref{back-handspring-neuron-activations-simple-rnn}). In both figures, we visualize the activations using four horizontal lines. Each horizontal line also consists of three inner lines, where the first represents timestep indices, and the other two represent activations of two hidden layer neurons. The outer horizontal lines are split by 30 timesteps, which correspond to 0.5 seconds of activity time since the activities are recorded at 60 frames per second.
 
-As a reminder, all samples are 110 timesteps long and the missing values are zero-padded. The chosen samples are also correctly predicted by the model. It is interesting to observe how the first neuron starts to flicker it's activation when it encounters the ending of an activity. From here we can also observe how back handsprings tend to last longer than backflips, easily noticeable from neuron activations. A second observation can be made by noticing that the first neuron seems to activate throughout almost the whole duration of a backflip. 
+The model correctly predicts the chosen samples. It is interesting to observe how the first neuron's activation starts to flicker when it encounters an activity's ending. We can also observe how back handsprings tend to last longer than backflips, easily noticeable from neuron activations. The second observation is that the first neuron seems to activate throughout almost the whole duration of a backflip. 
 
 \begin{figure*}
    \centering
@@ -143,7 +143,7 @@ As a reminder, all samples are 110 timesteps long and the missing values are zer
 %\includegraphics[width=\textwidth]{images/classifier/neuron-activations-simple-rnn-model-3/backflip-64-allar}\\
 %\includegraphics[width=\textwidth]{images/classifier/neuron-activations-simple-rnn-model-3/backflip-66-allar}\\
 \end{tabular}
-    \caption{Simple RNN neuron activations for backflip samples}
+    \caption{Simple RNN neuron activations for three backflip samples}
     \label{backflip-neuron-activations-simple-rnn}
 \end{figure*}
 
@@ -156,8 +156,18 @@ As a reminder, all samples are 110 timesteps long and the missing values are zer
 %\includegraphics[width=\textwidth]{images/classifier/neuron-activations-simple-rnn-model-3/flack-59-martin}\\
 %\includegraphics[width=\textwidth]{images/classifier/neuron-activations-simple-rnn-model-3/flack-68-rasmus}\\
 \end{tabular}
-    \caption{Simple RNN neuron activations for back handspring samples}
+    \caption{Simple RNN neuron activations for three back handspring samples}
     \label{back-handspring-neuron-activations-simple-rnn}
+\end{figure*}
+
+\begin{figure*}
+   \centering
+\begin{tabular}{cc}
+\includegraphics[width=7.5cm]{images/classifier/model-output-simple-rnn-339/simple-rnn-339-out-backflips}&
+\includegraphics[width=7.5cm]{images/classifier/model-output-simple-rnn-339/simple-rnn-339-out-flacks}\\
+\end{tabular}
+    \caption{All backflip samples (left) and all back handspring samples (right) output activations combined show how neurons "learned" to activate differently for these activities.}
+    \label{simple-rnn-all-samples-outputs-combined}
 \end{figure*}
 
 
