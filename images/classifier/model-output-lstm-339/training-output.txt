@@ -1,0 +1,154 @@
+odel: "sequential_41"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+lstm_41 (LSTM)               (None, 2)                 264       
+_________________________________________________________________
+dropout_41 (Dropout)         (None, 2)                 0         
+_________________________________________________________________
+dense_81 (Dense)             (None, 2)                 6         
+_________________________________________________________________
+dense_82 (Dense)             (None, 2)                 6         
+=================================================================
+Total params: 276
+Trainable params: 276
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 181 samples, validate on 90 samples
+Epoch 1/5
+181/181 [==============================] - 29s 163ms/step - loss: 0.6583 - accuracy: 0.5967 - val_loss: 0.6864 - val_accuracy: 0.4889
+Epoch 2/5
+181/181 [==============================] - 29s 160ms/step - loss: 0.6193 - accuracy: 0.6133 - val_loss: 0.6492 - val_accuracy: 0.8222
+Epoch 3/5
+181/181 [==============================] - 29s 160ms/step - loss: 0.5701 - accuracy: 0.7238 - val_loss: 0.6007 - val_accuracy: 0.8444
+Epoch 4/5
+181/181 [==============================] - 29s 160ms/step - loss: 0.6452 - accuracy: 0.6354 - val_loss: 0.6132 - val_accuracy: 0.8667
+Epoch 5/5
+181/181 [==============================] - 29s 161ms/step - loss: 0.6100 - accuracy: 0.7348 - val_loss: 0.5514 - val_accuracy: 0.8222
+Saved model to disk
+>#1 validation accuracy: 80.882
+Model: "sequential_42"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+lstm_42 (LSTM)               (None, 2)                 264       
+_________________________________________________________________
+dropout_42 (Dropout)         (None, 2)                 0         
+_________________________________________________________________
+dense_83 (Dense)             (None, 2)                 6         
+_________________________________________________________________
+dense_84 (Dense)             (None, 2)                 6         
+=================================================================
+Total params: 276
+Trainable params: 276
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 181 samples, validate on 90 samples
+Epoch 1/5
+181/181 [==============================] - 29s 160ms/step - loss: 0.5659 - accuracy: 0.5967 - val_loss: 0.4772 - val_accuracy: 0.4889
+Epoch 2/5
+181/181 [==============================] - 29s 159ms/step - loss: 0.4033 - accuracy: 0.7956 - val_loss: 0.3478 - val_accuracy: 0.9444
+Epoch 3/5
+181/181 [==============================] - 29s 158ms/step - loss: 0.4280 - accuracy: 0.8232 - val_loss: 0.3120 - val_accuracy: 1.0000
+Epoch 4/5
+181/181 [==============================] - 28s 157ms/step - loss: 0.3448 - accuracy: 0.8453 - val_loss: 0.2329 - val_accuracy: 1.0000
+Epoch 5/5
+181/181 [==============================] - 28s 156ms/step - loss: 0.3374 - accuracy: 0.8453 - val_loss: 0.2042 - val_accuracy: 1.0000
+Saved model to disk
+>#2 validation accuracy: 100.000
+Model: "sequential_43"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+lstm_43 (LSTM)               (None, 2)                 264       
+_________________________________________________________________
+dropout_43 (Dropout)         (None, 2)                 0         
+_________________________________________________________________
+dense_85 (Dense)             (None, 2)                 6         
+_________________________________________________________________
+dense_86 (Dense)             (None, 2)                 6         
+=================================================================
+Total params: 276
+Trainable params: 276
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 181 samples, validate on 90 samples
+Epoch 1/5
+181/181 [==============================] - 29s 159ms/step - loss: 0.6823 - accuracy: 0.6022 - val_loss: 0.7014 - val_accuracy: 0.4889
+Epoch 2/5
+181/181 [==============================] - 28s 155ms/step - loss: 0.6563 - accuracy: 0.6022 - val_loss: 0.6253 - val_accuracy: 0.4889
+Epoch 3/5
+181/181 [==============================] - 29s 158ms/step - loss: 0.4183 - accuracy: 0.7514 - val_loss: 0.3150 - val_accuracy: 0.9778
+Epoch 4/5
+181/181 [==============================] - 28s 156ms/step - loss: 0.3411 - accuracy: 0.8287 - val_loss: 0.2340 - val_accuracy: 0.9778
+Epoch 5/5
+181/181 [==============================] - 28s 157ms/step - loss: 0.3587 - accuracy: 0.8011 - val_loss: 0.2046 - val_accuracy: 0.9778
+Saved model to disk
+>#3 validation accuracy: 95.588
+Model: "sequential_44"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+lstm_44 (LSTM)               (None, 2)                 264       
+_________________________________________________________________
+dropout_44 (Dropout)         (None, 2)                 0         
+_________________________________________________________________
+dense_87 (Dense)             (None, 2)                 6         
+_________________________________________________________________
+dense_88 (Dense)             (None, 2)                 6         
+=================================================================
+Total params: 276
+Trainable params: 276
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 181 samples, validate on 90 samples
+Epoch 1/5
+181/181 [==============================] - 29s 160ms/step - loss: 0.6651 - accuracy: 0.5691 - val_loss: 0.8074 - val_accuracy: 0.4889
+Epoch 2/5
+181/181 [==============================] - 29s 157ms/step - loss: 0.6516 - accuracy: 0.6022 - val_loss: 0.5913 - val_accuracy: 0.4889
+Epoch 3/5
+181/181 [==============================] - 29s 157ms/step - loss: 0.4619 - accuracy: 0.7459 - val_loss: 0.3442 - val_accuracy: 1.0000
+Epoch 4/5
+181/181 [==============================] - 29s 158ms/step - loss: 0.3222 - accuracy: 0.9227 - val_loss: 0.2308 - val_accuracy: 1.0000
+Epoch 5/5
+181/181 [==============================] - 29s 158ms/step - loss: 0.2755 - accuracy: 0.8785 - val_loss: 0.1663 - val_accuracy: 1.0000
+Saved model to disk
+>#4 validation accuracy: 100.000
+Model: "sequential_45"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+lstm_45 (LSTM)               (None, 2)                 264       
+_________________________________________________________________
+dropout_45 (Dropout)         (None, 2)                 0         
+_________________________________________________________________
+dense_89 (Dense)             (None, 2)                 6         
+_________________________________________________________________
+dense_90 (Dense)             (None, 2)                 6         
+=================================================================
+Total params: 276
+Trainable params: 276
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 181 samples, validate on 90 samples
+Epoch 1/5
+181/181 [==============================] - 29s 159ms/step - loss: 0.6837 - accuracy: 0.5912 - val_loss: 0.6692 - val_accuracy: 0.7222
+Epoch 2/5
+181/181 [==============================] - 28s 157ms/step - loss: 0.5779 - accuracy: 0.7348 - val_loss: 0.4801 - val_accuracy: 0.8444
+Epoch 3/5
+181/181 [==============================] - 28s 157ms/step - loss: 0.5020 - accuracy: 0.7735 - val_loss: 0.2865 - val_accuracy: 0.9556
+Epoch 4/5
+181/181 [==============================] - 29s 159ms/step - loss: 0.4596 - accuracy: 0.8508 - val_loss: 0.2160 - val_accuracy: 0.9667
+Epoch 5/5
+181/181 [==============================] - 28s 156ms/step - loss: 0.3801 - accuracy: 0.8453 - val_loss: 0.1840 - val_accuracy: 0.9667
+Saved model to disk
+>#5 validation accuracy: 97.059
+[80.88235259056091, 100.0, 95.58823704719543, 100.0, 97.0588207244873]
+Accuracy: 94.706% (+/-7.120)
+CPU times: user 25min 54s, sys: 3min 40s, total: 29min 34s
+Wall time: 12min 7s

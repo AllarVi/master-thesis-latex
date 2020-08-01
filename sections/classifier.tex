@@ -121,6 +121,33 @@ An early stopping hook (callback) is also implemented to monitor for validation 
     \label{simple-rnn-repeats-accuracy}
 \end{figure*}
 
+\subsubsection{LSTM training process} 
+
+We can observe the test accuracies for the LSTM classifier in figure \ref{simple-rnn-repeats-accuracy}. The training process was repeated for five epochs and five separate models. The accuracy and loss monitoring for training and validation sets is depicted in figure \ref{lstm-acc-loss}. It is interesting to note that without changing the hyperparameters, the LSTM classifier achieves even higher accuracies than the SimpleRNN classifier. As the LSTM units extend the recurrent self-connecting cells with input and output gates connected to other memory cells \cite{staudemeyer2019understanding}, it is also more complicated to intercept and visualize the inner activations of this classifier and not covered in the scope of this thesis.  
+
+\begin{figure*}
+   \centering
+\begin{tabular}{cc}
+\includegraphics[width=6.5cm]{images/classifier/model-output-lstm-339/model-1-train-vs-validation-accuracy}&
+\includegraphics[width=6.5cm]{images/classifier/model-output-lstm-339/model-1-train-vs-validation-loss}\\
+
+\includegraphics[width=6.5cm]{images/classifier/model-output-lstm-339/model-2-train-vs-validation-accuracy}&
+\includegraphics[width=6.5cm]{images/classifier/model-output-lstm-339/model-2-train-vs-validation-loss}\\
+
+\includegraphics[width=6.5cm]{images/classifier/model-output-lstm-339/model-3-train-vs-validation-accuracy}&
+\includegraphics[width=6.5cm]{images/classifier/model-output-lstm-339/model-3-train-vs-validation-loss}\\
+
+\includegraphics[width=6.5cm]{images/classifier/model-output-lstm-339/model-4-train-vs-validation-accuracy}&
+\includegraphics[width=6.5cm]{images/classifier/model-output-lstm-339/model-4-train-vs-validation-loss}\\
+
+\includegraphics[width=6.5cm]{images/classifier/model-output-lstm-339/model-5-train-vs-validation-accuracy}&
+\includegraphics[width=6.5cm]{images/classifier/model-output-lstm-339/model-5-train-vs-validation-loss}\\
+
+\end{tabular}
+    \caption{Comparison of training and validation accuracies/losses for the LSTM classifier}
+    \label{lstm-acc-loss}
+\end{figure*}
+
 \section{Classifier Visualization and\\ Analysis}
 \label{classifier-visualization}
 
