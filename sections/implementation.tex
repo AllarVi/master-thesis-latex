@@ -1,72 +1,6 @@
-\begin{comment}
-
-- Data acquisition
-    - Amazon AWS
-    - iPad application
-    
-- Input raw data
-    - Data description
-    - Removing outliers
-    - Pandas dataframe
-
-- Clustering
-    - Corner detection
-        - Transformation to bitmap
-        - Computer vision, detecting corner nodes, edges of the image
-        - Finding corresponding points in the input data set
-        
-    - Creating Tree-Like Graph
-        - Creating Edges 
-        - Creating Sub-Edges recursively
-            - Parent/Child Edges
-            - Creation of the N-depth graph of edges
-            - Calculating features for every edge, on every depth (lazily - only then needed, in runtime)
-                - Geometric
-                - Kinematic
-                - Combing with mean/min/max
-                - Feature naming
-            - Feature naming
-                - Theoretical feature number
-                
-- Anomaly detection and feature transformation
-    - Creating Sequences of features on some arbitrary depth level
-    - Transforming 1D sequence into training data using Sliding Window Method
-        - Predicting next value, using previous values
-    - Training LSTM neural network
-    - LSTM network validation
-    - Generation of Anomaly descriptive features using LSTM
-
-- Building Machine Learning Classifier Models
-
-    - Feature aggregation
-        - Drawing-level features
-        - Edge level features
-        - Drawing Anomaly features
-        - Edge Anomaly features
-        
-    - KFold generation
-    
-    - Feature Statistical Analysis for every fold
-        - T-test
-        - U-test
-        - Spearman correlation coefficient
-        - Fisher score
-        
-    - Training machine learning models
-        - KNN, tree, RF, SVM, AdaBoost
-        - Measuring Model characteristics
-            - Accuracy
-            - Sensitivity (true positive rate) 
-            - Specificity (true negative rate)
-    
-    - Predicting every instance of the data
-        - Lime algorithm
-        
-\end{comment}
-
 \section{Implementation overview}
 
-This thesis aims to propose an end-to-end type prototype implementation to automate the recognition of gymnastics exercises using computers. High overview of the steps required to achieve this is specified in the following list:
+This thesis aims to propose an end-to-end type solution to automate the recognition of gymnastics exercises using computers. High overview of the steps required to achieve this is specified in the following list:
 
 \begin{easylist}[enumerate]
 & Data acquisition
@@ -90,28 +24,7 @@ This thesis aims to propose an end-to-end type prototype implementation to autom
     
 \end{easylist}
 
-\section{Infrastructure and tools for analysis}
-
-\begin{comment}
-
-Keywords:
-
-    - Hardware for data acquisition - iPad, iPencil
-    
-    - Client
-        - iOS App, developed by author
-    
-    - Back-end
-        - Amazon AWS
-        - Flask
-        
-    - Analysis tools
-        - PyCharm - for IDE
-        - Python - Language for development
-        - Libraries
-            - Tensorflow, OpenCV, Pandas, Scikit-Learn - machine learning library for Python
-
-\end{comment}
+\section{Infrastructure and tools for\\ analysis}
 
 \subsection{Used hardware and software}
 
@@ -133,7 +46,7 @@ A single Amazon EC2 instance with the following specifications is launched as th
 
 \subsection{Data-processing environment}
 
-All experimentations were conducted in the Jupyter Notebook environment (running as a server on the backend instance). Python programming language was used for developing most of the data processing, classifier training and validation scripts. Keras, the Python deep learning API, was used with Tensorflow backend for accessing machine learning algorithms. More notable libraries used for experimentation include commonly used \textit{pandas}, \textit{numpy}, \textit{sklearn} and \textit{matplotlib}.
+All experiments were conducted in the Jupyter Notebook environment (running as a server on the backend instance). The author created separate notebook files for each classifier training, activation analysis, and data exploration. We used Python programming language for developing most of the data processing, classifier training, and validation scripts. Keras, the Python deep learning API, was used with Tensorflow backend for accessing machine learning algorithms. More notable libraries used for experimentation include commonly used \textit{pandas}, \textit{numpy}, \textit{sklearn} and \textit{matplotlib}.
 
 \subsubsection{Additional miscellaneous software}
 
@@ -142,35 +55,4 @@ All experimentations were conducted in the Jupyter Notebook environment (running
 & \textit{FTP server and client} --- FTP server helps with the uploading and downloading of larger datasets. The \textit{vsftpd} package was used in this thesis.
 
 \end{easylist}
-
-\begin{comment}
-
-(1)
-
-During the digital clock drawing test process, two individuals are involved, one is a patient and another acts as an instructor, who could be the doctor, nurse or any other employee of medical facility.
-The iPad Pro together with an Apple Pencil are provided to the patient, then he is given short instructions about the tests and he may ask any questions about them. The instructor launches our application, enters the patient identification number, which is going to be used afterwards to match the data we have from the iPad application with the patient data provided to us by the clinicians offline.
-After entering the patient identification number, the screen with the test selection is displayed, as shown on figure 2.2. The clinicians might configure this screen to show only certain tests. This screen also shows the progress of the same patient session to make it easier to track completed tests.
-
-After selecting the clock test from the list of tests, or after completing the previous test and clicking the button ”next”, the clock drawing test screen is opened. This is simple empty screen with the buttons ”back” and ”next” on the status bar on the top of the screen. The empty area inside of the screen is for drawing.
-
-Since the clock drawing test is one of the many tests performed during the medical screening not much of the attention is spent on it in particular. The patient is simply asked to draw a clock, he is not asked to draw the exact time.
-
-After the test has been completed and the instructor will trigger the next one, the iPad will check whether the Internet is available and if it is, will convert the drawing data into JSON format and send the it directly to our servers. If the Internet is not available at the moment or if sending the data has failed, the data will be saved in the local storage of the iPad.
-
-Every time the application is opened - it will check whether the Internet is available and if there are any unsynchronised tests, and will try to send them asynchronously in the background, hidden from the person using the application. If because of some reason sending data is not an option, it is possible to extract the data using the XCode application with developer’s provisional profile - which ensures that only the developers of the application has access to data.
-
-(2)
-
-During the completion of the tasks stylus performs on–surface movements, each change of the position of the stylus is registered as a separate event with relevant data – x–axis position, y–axis position, time and pressure. Every registered movement event is essentially a line from a data matrix consisting of n rows and 4 columns, where n is the total amount of movement events produced during a single completion of one task or subtask. Each data matrix is saved separately for further processing as raw data. The process of data flow is depicted in Figure.
-
-(3)
-
-Subjects were rested and seated in front of the table in comfort- able position. Each subject was asked to complete a handwriting task according to the prepared pre-filled template at a comfortable speed. Subjects were allowed to repeat the task in case of some error or mistake during handwriting. The pre-filled template is depicted. The pre-filled template was shown to the subjects; no restrictions about the number of repetitions of syllables/words in tasks or their height were given.
-A tablet was overlaid with an empty paper template (containing only printed lines and square box specifying area for Archimedean spiral), and a special ink pen was held in a normal fashion, allowing for immediate full visual feedback. The signals were recorded using the Intuos 4M (Wacom technology) digitizing tablet.
-
-Digitized signals were acquired during the movements executed while exerting pressure on the writing surface (on-surface movement) and during the movement above the writing surface (in-air movement). The perpendicular pressure exerted on the tablet surface was also recorded. The recordings started when the pen touched the surface of the digitizer and finished when the task was completed. The tablet captured the following dynamic features (time-sequences): x-coordinate, x[t]; y-coordinate, y[t]; time stamp, s[t]; button status, b[t]; pressure, p[t]; and discrete time t. Button status is a binary variable, being 0 for in-air movement and 1 for on-surface movement.
-
-The tablet sampling rate was 100 samples per second; the acquisition software was developed by the research team. Subsequent analysis was performed using Matlab and Python programming language.
-
-\end{comment}
 

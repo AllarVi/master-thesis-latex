@@ -8,12 +8,12 @@ All classifiers presented in this thesis have outstanding results with distingui
 
 With the dataset used for experimentation, the classifiers tend to be sensitive to overfitting, requiring heuristic hyperparameter tuning. The author's training process involved training the classifiers to overfit at first runs and using hyperparameter tuning with callbacks to finish training before reaching 100\% accuracy. With a training set of 339 samples, almost all recurrent classifiers finish at sub-hundred percent accuracy, enabling the comparison of classifier accuracy ratios.
 
-With equal sample sizes and training epochs, the hierarchical RNN finishes with the highest average accuracy of 99.909\%, however requiring four times as much training time as the \textit{SimpleRNN} classifier, with no substantial loss of average accuracy. The hierarchical RNN provides more interpret-ability with body part specific neuron activations. In summary, experimental results show positive potential using recurrent network architectures for differentiating gymnastics movements, such as backflips and back handsprings. 
+With equal sample sizes and training epochs, the LSTM finishes with the highest average accuracy of 94.706\%; however, due to the complex  LSTM units being the most challenging network to interpret. The hierarchical RNN provides more interpretability with body part specific neuron activations and even exceeds the SimpleRNN in terms of accuracy, but requires four times as much training time as the SimpleRNN classifier. In summary, experimental results show positive potential using recurrent network architectures for differentiating gymnastics movements, such as backflips and back handsprings.
 
 \begin{table}[htb]
 \begin{tabular}{llll}
 Classifier            & SimpleRnn & LSTM      & Hierarchical RNN  \\
-Average test accuracy & 94.467\%  & 88.405\%  &  99.909\%         \\
+Average test accuracy & 88.824\%  & 94.706\%  & 91.470\%          \\
 Wall time             & 13min 4s  & 30min 34s & 1h 1min 38s       \\
  &  &  &  
 \end{tabular}

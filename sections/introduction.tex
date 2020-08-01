@@ -1,11 +1,3 @@
-\begin{comment}
-
-% researches suggest\cite{drotar2016evaluation, drotar2015decision, rosenblum2013handwriting}, that handwriting and drawing might serve as a diagnostic biomarker for PD. 
-
-% Main goal of our work is to detect and analyze drawing mistakes within Luria’s alternating series tests of drawing patterns \cite{luria1995higher}, distinguish most significant features, build classification machine learning model and offer mechanism to interpret each individual prediction.
-
-\end{comment}
-
 \section{Motivation}
 
 Gymnastics, a sports discipline with an extensive history, requires athletes to have a comprehensive set of physical traits to execute exercises. These traits include balance, strength, flexibility, agility, and endurance. By developing these physical attributes, the athletes can perform motions involving aerial twisting and rotations. This master's thesis focuses on what is known as \textit{tumbling}, a sub-discipline of gymnastics. Some of the foundation movements in tumbling, ofter categorized as flips and handsprings, include backflips (aka. a back tuck) and back handsprings. These movements form the backbone of tumbling as they are needed to progress onto more advanced moves, while also used as individual components of a tumbling routine.
@@ -14,7 +6,7 @@ As backflips and back handsprings are the foundational movements for more advanc
 
 At the time of writing, the most common methods for analyzing gymnastics movements require sophisticated motion capture tools, physically attached sensor data, and gymnastics coaches' attention to give valuable feedback to the athletes or analyze their technique \cite{park2014kinematic} \cite{yamada2019dynamics}. This master's thesis focuses on the automatic recognition of backflips and back handsprings using a combination of pose estimation tools with recurrent neural networks. The author proposes the single-camera solution presented in this thesis as a non-invasive, accessible, and state-of-the-art solution to recognize backflips and back handsprings. While not part of this thesis, the author also hopes to contribute the solution developed in this thesis to future research in automated analysis of technique, feedback for athletes, and automatic documentation of gymnastics workouts' history.
 
-\section{Human Activity Recognition Background}
+\section{Human Activity Recognition\\ Background}
 
 Human activity recognition taxonomy can be challenging as the diversity of available methods is extensive. We depict the broad categorization of human activity recognition methods in figure \ref{har-taxonomy}, proposed in the article \cite{10.3389/frobt.2015.00028}. We also categorize the technique used to automate gymnastics activity recognition in this paper as a \textit{unimodal shape-based method}. While identifying gymnastics movements from multiple modalities (i.e., the addition of behavioral or emotional features) could provide useful data for the analysis, it would require more invasive tools, such as microphones and physical sensors. The author aims to develop a recognition method less invasive and free of physical attachments. For example, in competition environments, athletes are not allowed to wear any extra accessories \cite{acrobatic-gymnastics-rules-and-policies}, and the only viable method for recording the activity is the video modality. 
 
