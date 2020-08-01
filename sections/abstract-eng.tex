@@ -1,7 +1,7 @@
 \begin{titlepage}
 \begin{center}
 
-{\large \textbf{Analysis of Interpretable Anomalies and Kinematic Parameters in Luria's Alternating Series Tests for Parkinson's Disease Modeling}}
+{\large \textbf{DATA DRIVEN GYMNASTICS SKILLS RECOGNITION AND ANALYSIS}}
 
 \vspace*{1cm}
 
@@ -12,16 +12,15 @@
 \end{center}
 
 
-Primary goal of present thesis is to conduct analysis of patterns drawn during Luria’s alternating series tests, extract interpretable feature set and develop machine learning model, capable of correct differentiation of Parkinson’s disease patients from healthy control subjects.
+The present thesis's primary goal is to construct a dataset consisting of gymnastics activities - the backflip and the back handspring, use pose estimation, implement pre-processing strategies, and develop machine learning models capable of distinguishing between the two gymnastics activities.
 
-Luria’s alternating series fine motor tests are being used in psychology and neurology to assess level of disorder in motion planning and execution during handwriting, which is approved biomarker for Parkinson’s disease.
+Backflips and back handsprings are two of the foundational gymnastics moves performed from a standing position and including the rotation of the human body, making it challenging for machine learning algorithms designed to recognize more straightforward human actions to recognize these more complex moves.
 
-A novel method to analyze Luria’s alternating series patterns drawn during fine motor test constitute main result of the present thesis. Majority of solutions available in the literature are based either on the analysis of entire drawing or individual strokes. Distinctive feature of the proposed approach is that it allows to analyze patterns, considering their logical structure with any required level of detail. To achieve this, unique supervised and unsupervised machine learning techniques are applied. Computer vision technique is used to split pattern into logical segments. Based on this information, feature sequences describing different kinematic properties of the drawing are constructed. During next stages, neural-network based models are used to generate feature sequences of the "expected" normal drawing, which allows to expose "unexpected" regions with anomalies. 
+The majority of solutions available for estimating poses in gymnastics use movement-restricting and invasive motion capture tools. Other forms of estimating poses from a distance include multi-camera setups, which are not usable in daily gymnasium environments. This thesis aims to explore and propose a more accessible alternative to non-invasive gymnastics skill recognition solutions. The solution presented in this thesis uses a consumer-grade video recorder with a single-camera pose estimation to extract time-series skeleton data. After successfully extracting skeleton data and applying data processing strategies, machine learning classifiers are developed using recurrent neural networks to train the machine to make successful distinctions between backflips and back handsprings.
 
-Main outcome of current research is classifier model, capable of differentiating Parkinson's disease patients from healthy controls, providing prediction performance around 91\%. Experimental part of the thesis offers technique for explaining individual predictions of obtained classifier by applying recently proposed machine learning meta-algorithm.
+Current research's primary outcome is classifier models, capable of differentiating backflip and back handspring activities, providing prediction performance up to 95\%. Discussion and classifier analysis section of this thesis gives more in-depth insights into the artificial neuron activations by visualization.
 
-Present thesis is written in English and is \pageref{LastPage} pages long, including 11 chapters, 16 tables and 19 figures.
-
+The present thesis is written in English and is \pageref{LastPage} pages long, including 7 chapters, 1 table and 24 figures.
 
 \end{titlepage}
 
